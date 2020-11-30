@@ -1,0 +1,41 @@
+.post-category {
+  display: inline-block;
+  margin-right: 0.6rem;
+  padding: 0.2rem 0.8rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 1rem;
+  border: 1px solid;
+  border-radius: 5px;
+  &:last-of-type {
+    margin-right: unset;
+  }
+}
+.post-publish {
+  display: inline-block;
+  text-align: center;
+  span {
+    display: block;
+  }
+
+}
+.post-title {
+  display: inline-block;
+  font-size: 7rem;
+}
+  .post-date {
+    font-size: 2rem;
+    color: $accent-color;
+  }
+  .post-month {
+    font-size: 1.2rem;
+  }
+  .post-year {
+    font-size: 1.8rem;
+  }
+.post-related {
+  p {
+    font-size: 1.2rem;
+
+  }
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include structure/head.html %}
+  <body id="body">
+    <header>
+      <div class="sticky-nav py-lg px-md">
+        <a href="/" class="nav-brand"><strong>Gus</strong>Schiavon</a>
+        {% include structure/nav.html %}
+      </div>
+    </header>
+    {{content}}
+    <script src="/js/functions.js"></script>
+  </body>
+</html>  

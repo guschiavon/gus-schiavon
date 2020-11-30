@@ -1,0 +1,22 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  a {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    &:last-of-type {
+      margin-bottom: none;
+    }
+  }
+}
+.nav-brand {
+  font-size: 3rem;
+}
+.sticky-nav {
+  position: fixed;
+  top: 10rem;
+  left: 0;
+}
+
+
+    

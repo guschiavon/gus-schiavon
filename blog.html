@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<h1>Blog</h1>
+<h3>A bunch of stuff here</h3>
+<main class="blog-home">
+  {% for post in site.posts %}
+  <div class="post-container mb-3">
+    <div class="post-publish mr-2">
+      <span class="post-date txt-bold">{{post.date | date: "%d" }}</span>
+      <span class="post-month txt-bold">{{post.date | date: "%b" }}</span>
+      <span class="post-year txt-bold">{{post.date | date: "%y" }}</span>
+    </div>
+    <h2 class="post-title mr-2"><a href="{{post.url}}">{{post.title}}</a></h2>
+    
+    {% for category in post.categories %}
+    
+      <h5 class="post-category"><a href="">{{category}}</a></h5>
+      {% endfor %}
+      <p class="py-md">{{post.short_description | truncate: 140 }}</p>
+      <a href="{{post.url}}" class="btn">Read</a>
+    
+  </div>
+  {% endfor %}
+</main>

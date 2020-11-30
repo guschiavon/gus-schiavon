@@ -1,0 +1,122 @@
+body {
+  padding-top: 10rem;
+  padding-right: 10rem;
+}
+
+body,
+div,
+p,
+ul,
+ol,
+li,
+a,
+blockquote,
+cite,
+button,
+input,
+textarea {
+  font-family: $body-font;
+  font-size: $body-font-size;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  &:last-child {
+    margin-bottom: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+label {
+  font-family: $heading-font;
+  a,
+  span {
+    font-size: inherit;
+  }
+}
+
+h1 {
+  font-size: $heading-font-size;
+  font-weight: 800;
+  line-height: 1.3;
+}
+h2 {
+  font-size: $heading-font-size * 0.6;
+  font-weight: normal;
+}
+h3 {
+  font-size: $heading-font-size * 0.45;
+  color: $accent-color;
+}
+h4 {
+  font-size: $heading-font-size * 0.33;
+  color: lighten($dark-color, 20);
+}
+h5 {
+  font-size: $heading-font-size * 0.25;
+}
+
+ul,
+ol {
+  margin-bottom: 1.5rem;
+  list-style-position: inside;
+  list-style-type: square;
+  li {
+    font-weight: 200;
+  }
+}
+pre,
+code {
+  background-color: darken($dark-color, 10);
+  border-radius: 5px;
+}
+pre {
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+code {
+  color: whitesmoke;
+  padding: 0.2rem 0.4rem;
+}
+
+blockquote {
+  padding: 2rem;
+  border-left: 1rem solid;
+  border-color: lighten($dark-color, 5);
+  p {
+    text-indent: 2rem;
+    position: relative;
+    font-size: $body-font-size * 1.5;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: unset;
+    &::before {
+      content: '\275D';
+      position: absolute;
+      top: -1rem;
+      left: -2rem;
+      font-size: 3rem;
+      font-style: unset;
+      opacity: 0.33;
+    }
+  }
+}
+main a {
+  color: $accent-color;
+}
+.blog-home a {
+  color: unset;
+}
+
+:focus {
+  outline: none;
+  color: $accent-color;
+  text-decoration: underline;
+  font-weight: bolder;
+  border-color: $accent-color;
+}

@@ -1,0 +1,23 @@
+cloudcannon:
+  data: true
+
+sass:
+  sass_dir: _sass
+
+collections:
+  posts:
+    output: true
+    permalink: /:year/:title
+  portfolios:
+    output: true
+    permalink: /:type/:title
+
+uploads_dir: assets/images
+
+plugins:
+  - jekyll-webp
+  - jekyll-sitemap
+
+webp:
+  enable: true
+  
