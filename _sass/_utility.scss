@@ -175,3 +175,21 @@ $margin: 1rem;
   color: $light-color;
 }
 
+// alignment 
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+.center {
+  text-align: center;
+}
+
+// images 
+.responsive-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}

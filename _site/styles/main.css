@@ -88,6 +88,14 @@ body { background-color: #d2d2d2; color: #333; width: 75%; margin-left: auto; }
 
 .txt-light { color: #d2d2d2; }
 
+.right { text-align: right; }
+
+.left { text-align: left; }
+
+.center { text-align: center; }
+
+.responsive-image { height: 100%; width: 100%; object-fit: cover; object-position: center; }
+
 body { padding-top: 10rem; padding-right: 10rem; }
 
 body, div, p, ul, ol, li, a, blockquote, cite, button, input, textarea { font-family: "Bitter", serif; font-size: 2rem; }
@@ -176,5 +184,7 @@ a.btn { background-color: #333; color: #d2d2d2; padding: 0.8rem 1.5rem; font-siz
 .post-year { font-size: 1.8rem; }
 
 .post-related p { font-size: 1.2rem; }
+
+.profile-image { width: 600px; height: 600px; margin-right: 5rem; float: left; overflow: hidden; }
 
 /*# sourceMappingURL=main.css.map */
