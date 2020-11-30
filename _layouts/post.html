@@ -1,42 +1,47 @@
 ---
 layout: default
 ---
-<h1>{{page.title}}</h1>
-<h2>{{page.subtitle}}</h2>
-<main class="">
+<main class="col-9">
+  <h1>{{page.title}}</h1>
+  <h2>{{page.subtitle}}</h2>
+  <hr class="divider-lg">
+  <h4 class="mb-4">{{page.date | date_to_string }}</h4>
   {{content}}
-</main>
-<section class="related-content py-md">
-  <h4>Related content:</h4>
-  {% assign maxRelated = 4 %}
-  {% assign minCommonTags = 1 %}
-  {% assign maxRelatedCounter = 0 %}
-
-  {% for post in site.posts %}
-
-    {% assign sameTagCount = 0 %}
-    {% assign commonTags = '' %}
-
-    {% for tag in post.tags %}
-      {% if post.url != page.url %}
-        {% if page.tags contains tag %}
-          {% assign sameTagCount = sameTagCount | plus: 1 %}
-          {% capture tagmarkup %} <span class="post-category mb-1">{{ tag }}</span> {% endcapture %}
-          {% assign commonTags = commonTags | append: tagmarkup %}
+  <section class="related-content py-md grid-noGutter-spaceBetween">
+    <h4 class="col-12">Related content:</h4>
+    {% assign maxRelated = 4 %}
+    {% assign minCommonTags = 1 %}
+    {% assign maxRelatedCounter = 0 %}
+  
+    {% for post in site.posts %}
+  
+      {% assign sameTagCount = 0 %}
+      {% assign commonTags = '' %}
+  
+      {% for tag in post.tags %}
+        {% if post.url != page.url %}
+          {% if page.tags contains tag %}
+            {% assign sameTagCount = sameTagCount | plus: 1 %}
+            {% capture tagmarkup %} <span class="post-category">{{ tag }}</span> {% endcapture %}
+            {% assign commonTags = commonTags | append: tagmarkup %}
+          {% endif %}
         {% endif %}
+      {% endfor %}
+  
+      {% if sameTagCount >= minCommonTags %}
+      <div class="col-5">
+        <div class="post-related py-md">
+          <h5><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h5>
+          {{ commonTags }}
+          <p>{{post.short_description | truncate: 50}}</p>
+        </div>
+        {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+        {% if maxRelatedCounter >= maxRelated %}
+          {% break %}
+        {% endif %}
+
+      </div>
       {% endif %}
     {% endfor %}
-
-    {% if sameTagCount >= minCommonTags %}
-      <div class="post-related py-md">
-        <h5><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h5>
-        {{ commonTags }}
-        <p>{{post.short_description | truncate: 50}}</p>
-      </div>
-      {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
-      {% if maxRelatedCounter >= maxRelated %}
-        {% break %}
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-</section>
+  </section>
+</main>

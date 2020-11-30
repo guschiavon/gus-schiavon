@@ -1,0 +1,33 @@
+---
+layout: default
+title: Portfolio
+subtitle: A selection of work I'm proud of.
+short_description: Static Sites. Functional Apps. eCommerce shops. You name it.
+---
+<main class="col-9">
+  <h1 class="left">{{page.title}}</h1>
+  <h4>{{page.subtitle}}</h4>
+  <hr class="divider-lg mb-2">
+  <div class="grid-noGutter-spaceBetween">
+    <div class="col-5">
+      <div class="portfolio-container" style="background-image:url(/assets/images/gus-profile.jpg);">
+       
+        <div class="portfolio-overview">
+          <h3>Portfolio stack</h3>
+          <h2><a href="{{portfolio.url}}">Portfolio title</a></h2>
+          <p>Portfolio short description</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="portfolio-container">
+        
+        <div class="portfolio-overview">
+          <h3>Portfolio stack</h3>
+          <h2><a href="{{portfolio.url}}">Portfolio title</a></h2>
+          <p>Portfolio short description</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

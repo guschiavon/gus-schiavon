@@ -8,6 +8,13 @@ nav {
       margin-bottom: none;
     }
   }
+  .switch-toggle {
+    
+    span:nth-of-type(2) {
+      font-size: 1rem;
+      display: inline;  
+    }
+  }
 }
 .nav-brand {
   font-size: 3rem;

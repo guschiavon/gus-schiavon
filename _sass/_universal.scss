@@ -1,6 +1,8 @@
 body {
   padding-top: 10rem;
   padding-right: 10rem;
+  background-color: $light-color;
+  color: $dark-color;
 }
 
 body,
@@ -59,6 +61,7 @@ h4 {
 }
 h5 {
   font-size: $heading-font-size * 0.25;
+  text-transform: uppercase;
 }
 
 ul,
@@ -106,17 +109,25 @@ blockquote {
     }
   }
 }
-main a {
-  color: $accent-color;
+
+main {
+  a {
+    color: $accent-color;
+  }
 }
 .blog-home a {
   color: unset;
 }
 
-:focus {
-  outline: none;
+a:hover,
+a:focus {
   color: $accent-color;
+}
+a:hover {
+  transition: 0.2s all;
+}
+a:focus {
+  outline: none;
   text-decoration: underline;
   font-weight: bolder;
-  border-color: $accent-color;
 }

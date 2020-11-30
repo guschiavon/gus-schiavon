@@ -4,13 +4,6 @@
 // $dark-color: #333;
 // $accent-color: #0bdf0b;
 
-body {
-  background-color: $light-color;
-  color: $dark-color;
-  width: 75%;
-  margin-left: auto;
-}
-
 [data-theme="dark"] {
   background-color: $dark-color;
   color: $light-color;
@@ -29,6 +22,11 @@ body {
   pre code {
     color: unset;
     background-color: unset;
+  }
+  .post-publish {
+    hr {
+      background-color: $light-color;
+    }
   }
 }
 

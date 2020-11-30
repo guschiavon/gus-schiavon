@@ -1,8 +1,8 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-a { text-decoration: none; color: inherit; }
+a { text-decoration: none; color: inherit; transition: 0.2s all; }
 
-body { background-color: #d2d2d2; color: #333; width: 75%; margin-left: auto; }
+img { max-width: 100%; }
 
 [data-theme="dark"] { background-color: #333; color: #d2d2d2; }
 
@@ -13,6 +13,8 @@ body { background-color: #d2d2d2; color: #333; width: 75%; margin-left: auto; }
 [data-theme="dark"] code { color: #333; background-color: silver; }
 
 [data-theme="dark"] pre code { color: unset; background-color: unset; }
+
+[data-theme="dark"] .post-publish hr { background-color: #d2d2d2; }
 
 .py-xs { padding-top: 1rem; padding-bottom: 1rem; }
 
@@ -98,7 +100,7 @@ body { background-color: #d2d2d2; color: #333; width: 75%; margin-left: auto; }
 
 .divider-lg { border: none; background-color: #1fc71f; height: 10px; width: 100%; }
 
-body { padding-top: 10rem; padding-right: 10rem; }
+body { padding-top: 10rem; padding-right: 10rem; background-color: #d2d2d2; color: #333; }
 
 body, div, p, ul, ol, li, a, blockquote, cite, button, input, textarea { font-family: "Bitter", serif; font-size: 2rem; }
 
@@ -118,7 +120,7 @@ h3 { font-size: 3.6rem; color: #1fc71f; }
 
 h4 { font-size: 2.64rem; color: #666666; }
 
-h5 { font-size: 2rem; }
+h5 { font-size: 2rem; text-transform: uppercase; }
 
 ul, ol { margin-bottom: 1.5rem; list-style-position: inside; list-style-type: square; }
 
@@ -140,13 +142,19 @@ main a { color: #1fc71f; }
 
 .blog-home a { color: unset; }
 
-:focus { outline: none; color: #1fc71f; text-decoration: underline; font-weight: bolder; border-color: #1fc71f; }
+a:hover, a:focus { color: #1fc71f; }
+
+a:hover { transition: 0.2s all; }
+
+a:focus { outline: none; text-decoration: underline; font-weight: bolder; }
 
 nav { display: flex; flex-direction: column; }
 
 nav a { display: inline-block; margin-bottom: 0.5rem; }
 
 nav a:last-of-type { margin-bottom: none; }
+
+nav .switch-toggle span:nth-of-type(2) { font-size: 1rem; display: inline; }
 
 .nav-brand { font-size: 3rem; }
 
@@ -171,17 +179,17 @@ a.btn { background-color: #333; color: #d2d2d2; padding: 0.8rem 1.5rem; font-siz
 
 .post-container { position: relative; }
 
-.post-category { display: inline-block; margin-right: 0.6rem; padding: 0.2rem 0.8rem; text-transform: uppercase; font-weight: 200; font-size: 1rem; border: 1px solid; border-radius: 5px; }
+.post-category { display: inline-block; margin: 0 0.6rem; padding: 0.2rem 0.8rem; text-transform: uppercase; font-weight: 200; font-size: 1rem; border: 1px solid; border-radius: 5px; }
 
 .post-category:last-of-type { margin-right: unset; }
 
-.post-publish { position: absolute; top: 1.4rem; left: 0; }
+.post-publish { position: absolute; text-align: center; top: 2.5rem; left: 0; }
 
-.post-publish span { display: block; }
+.post-publish span { display: block; line-height: 0.9; }
 
 .post-publish hr { background-color: #333; border: none; height: 5px; }
 
-.post-title { display: inline-block; font-size: 7rem; text-indent: 4rem; line-height: 1.3; }
+.post-title { display: inline; font-size: 7rem; text-indent: 4rem; line-height: 1.3; }
 
 .post-date { font-size: 2rem; color: #1fc71f; }
 
@@ -191,6 +199,20 @@ a.btn { background-color: #333; color: #d2d2d2; padding: 0.8rem 1.5rem; font-siz
 
 .post-related p { font-size: 1.2rem; }
 
+.related-content .post-category { margin-left: 0; margin-bottom: 1rem; }
+
 .profile-image { width: 600px; height: 600px; margin-right: 5rem; float: left; overflow: hidden; }
+
+.portfolio-container { position: relative; height: 550px; display: flex; flex-direction: column; align-items: center; justify-content: center; background-position: center; background-size: cover; background-repeat: no-repeat; }
+
+.portfolio-container::after { content: ''; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: #333; opacity: 0.7; z-index: 0; }
+
+.portfolio-overview { position: relative; z-index: 1; }
+
+.portfolio-overview h2 { line-height: 1.2; }
+
+.portfolio-overview h2 a { color: inherit; }
+
+.portfolio-overview h3 { font-size: 2.5rem; font-weight: 200; }
 
 /*# sourceMappingURL=main.css.map */
