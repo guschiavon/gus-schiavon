@@ -193,3 +193,11 @@ $margin: 1rem;
   object-fit: cover;
   object-position: center;
 }
+
+// dividers
+.divider-lg {
+  border: none;
+  background-color: $accent-color;
+  height: 10px;
+  width: 100%;
+}

@@ -1,3 +1,6 @@
+.post-container {
+  position: relative;
+}
 .post-category {
   display: inline-block;
   margin-right: 0.6rem;
@@ -12,16 +15,24 @@
   }
 }
 .post-publish {
-  display: inline-block;
-  text-align: center;
+  position: absolute;
+  top: 1.4rem;
+  left: 0;
   span {
     display: block;
+  }
+  hr {
+    background-color: $dark-color;
+    border: none;
+    height:5px;
   }
 
 }
 .post-title {
   display: inline-block;
   font-size: 7rem;
+  text-indent: 4rem;
+  line-height: 1.3;
 }
   .post-date {
     font-size: 2rem;
