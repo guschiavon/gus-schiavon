@@ -1,0 +1,27 @@
+---
+layout: default
+title: Portfolios
+subtitle: A selection of work I'm proud of.
+short_description: "Blazing-fast Static Sites. Do-all Apps. Modern eCommerce shops. You name it: let's develop your business."
+---
+<main class="col-9">
+  <h1 class="left">{{page.title}}</h1>
+  <h4>{{page.subtitle}}</h4>
+  <hr class="divider-lg mb-4">
+  <div class="grid-noGutter-spaceBetween">
+    {% assign portfolios = site.portfolios | sort: "index" %}
+    {% for portfolio in portfolios %}
+    <div class="col-5 mb-4">
+      <div class="portfolio-container">
+        <a href="{{portfolio.url}}"><img src="{{portfolio.preview_image}}" alt="{{portfolio.short_description}}" class="portfolio-preview"></a>
+        <div class="portfolio-overview">
+          <h3>{{portfolio.stack}}</h3>
+          <h2><a href="{{portfolio.url}}">{{portfolio.title}}</a></h2>
+          <p class="txt-small">{{portfolio.short_description}}</p>
+          <a href="{{portfolio.url}}" class="btn">View</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</main>

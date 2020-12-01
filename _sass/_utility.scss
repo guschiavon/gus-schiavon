@@ -28,6 +28,12 @@
       background-color: $light-color;
     }
   }
+  .portfolio-container::after {
+    background-color: $dark-color;
+  }
+  .social-icon svg {
+    fill: $light-color;
+  }
 }
 
 // paddings
@@ -172,6 +178,10 @@ $margin: 1rem;
 .txt-light {
   color: $light-color;
 }
+.txt-small,
+.txt-small > * {
+  font-size: $body-font-size * 0.80;
+}
 
 // alignment 
 .right {
@@ -198,4 +208,8 @@ $margin: 1rem;
   background-color: $accent-color;
   height: 10px;
   width: 100%;
+}
+.border-bottom {
+  border-bottom: 5px solid $accent-color;
+  display: inline-block;
 }

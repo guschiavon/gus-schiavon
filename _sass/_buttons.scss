@@ -15,7 +15,9 @@ a.btn {
   width: 0;
 }
 .switch-toggle {
-  position: relative;
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
   width: 60px;
   height: 34px;
 }

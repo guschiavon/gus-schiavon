@@ -8,13 +8,6 @@ nav {
       margin-bottom: none;
     }
   }
-  .switch-toggle {
-    
-    span:nth-of-type(2) {
-      font-size: 1rem;
-      display: inline;  
-    }
-  }
 }
 .nav-brand {
   font-size: 3rem;
@@ -24,6 +17,19 @@ nav {
   top: 10rem;
   left: 0;
 }
-
-
-    
+.social-icon {
+  display: inline;
+  margin-right: 0.5rem;
+  svg {
+    width: 35px;
+    fill: $dark-color;
+    &:hover {
+      fill: $accent-color;
+    }
+  }
+  &:focus {
+    svg {
+      fill: $accent-color;
+    }
+  }
+}

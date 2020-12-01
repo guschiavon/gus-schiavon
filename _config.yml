@@ -10,7 +10,7 @@ collections:
     permalink: /:year/:title
   portfolios:
     output: true
-    permalink: /:type/:title
+    permalink: /:categories/:title
 
 uploads_dir: assets/images
 
@@ -21,4 +21,22 @@ plugins:
 
 webp:
   enable: true
-  
+
+icons:
+  - "Facebook"
+  - "Twitter"
+  - "Github"
+  - "Instagram"
+  - "Stack Overflow"
+  - "LinkedIn"
+
+categories:
+  - website
+  - pwa
+  - web-app
+  - e-commerce
+  - jekyll
+  - rails
+  - javascript
+  - gsap
+  - webflow
