@@ -58,7 +58,7 @@ gsap.registerPlugin(ScrollTrigger, CSSRulePlugin, MotionPathPlugin)
 const divider = document.getElementById("divider");
 const headerGradient = document.getElementById("gradient");
 const headerContent = document.getElementById("title-section");
-const navLink = document.getElementsByClassName("nav-link")
+const greenify = document.getElementsByClassName("greenify")
 
 const portfolioTl = gsap.timeline({
   scrollTrigger: {
@@ -127,12 +127,12 @@ ScrollTrigger.matchMedia({
         opacity: 0,
       })
       .to(headerGradient, {
-        height: "35rem",
-        backgroundImage: "linear-gradient(to bottom, #111, #0000 40%)",
+        height: "100",
+        backgroundImage: "linear-gradient(#111 30%, #333 66%, #0000 100%)",
       })
-      .to(navLink, {
+      .to(greenify, {
         color: "#1fc71f",
-      })(">");
+      })
 },
 
   "(min-width: 1024px)": function(){
