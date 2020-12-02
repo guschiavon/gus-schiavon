@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<main class="col-9">
+<main class="col-9_sm-12">
   <h1>{{page.title}}</h1>
   <h2>{{page.subtitle}}</h2>
   <hr class="divider-lg">
@@ -29,7 +29,7 @@ layout: default
       {% endfor %}
   
       {% if sameTagCount >= minCommonTags %}
-      <div class="col-5">
+      <div class="col-5_sm-12">
         <div class="post-related py-md">
           <h5><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h5>
           {{ commonTags }}

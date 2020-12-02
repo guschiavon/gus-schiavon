@@ -106,6 +106,9 @@
   .burger {
     display: flex;
   }
+  .post-title {
+    font-size: 3.5rem;
+  }
 }
 @media (min-width: 320px) and (max-width: 1023px) {
   .profile-image {
