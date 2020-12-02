@@ -73,6 +73,8 @@ portfolioTl.to(greenLine, {
   width: "200%"
 })
 
+const navbar = document.getElementById('sticky-nav')
+
 ScrollTrigger.matchMedia({
   "(max-width: 676px)": function() {
     let headerTl = gsap
@@ -101,8 +103,9 @@ ScrollTrigger.matchMedia({
         endTrigger: "#footer",
         pin: true,
         pinSpacing: false,
+        scrub: true
       },
-    });
+    }),
   },
 
   "(max-width: 1023px)": function(){
