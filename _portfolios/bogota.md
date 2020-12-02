@@ -7,16 +7,16 @@ short_description: A showcase website with scroll animations for the media agenc
 stack: Jekyll/GSAP
 preview_image: /assets/images/gus-2020.jpg
 hero_image: /assets/images/gus-profile.jpg
-testimonial: Being a studio specialised in motion graphics, we wanted to add some dynamism to our site. Gus helped us implement the scroll animations just as requested.
-testimonial_author: Caja Guedes, co-founder
+testimonial: Being a studio specialised in motion graphics, we wanted to add some dynamism to our site. Gus helped us <strong>implement the scroll animations just as requested</strong> and more importantly, on schedule! We'll be upgrading our site with more features soon, and Gus will be <strong>the</strong> man to handle that!
+testimonial_author: Caja, co-founder/owner
 portfolio_highlights:
-  - title: Sassy theme
+  - title: GSAP Animations
     text_content_html: >-
-      <p>By using Sass variables and integrating with a global settings file, the client is able to change the theme styles (fonts, colors, navigation, and more) through the <a href="https://cloudcannon.com">CloudCannon CMS</a> interface.</p>
+      <p>What's not to love about <a href="https://greensock.com" rel="noreferrer">Green Sock</a> and their JavaScript animation library? We can accomplish so much with it: scrub animations that react to scroll events, all responsive to multiple screen sizes.</p>
     image: /assets/images/gus-2020.jpg  
-  - title: Responsive images
+  - title: Responsive design
     text_content_html: >-
-      <p>Multiple image versions & sizes are generated upon upload by leveraging the Jekyll gem library, resulting in superb responsivity for the site's content.</p>
+      <p>Speaking of responsive, the site's content and interactions adapt to multiple screen sizes, from extra small devices to large monitors. Oh, and did I mention it is cross-browser compatible?</p>
     image: /assets/images/gus-2020.jpg  
 ---
 ### The brief:

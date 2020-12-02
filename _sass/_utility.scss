@@ -1,8 +1,10 @@
 
 // Theme settings
-// $light-color: whitesmoke;
-// $dark-color: #333;
-// $accent-color: #0bdf0b;
+.home {
+  h1, h2 {
+    font-size: var(--heading-font-size);
+  }
+}
 
 [data-theme="dark"] {
   background-color: $dark-color;
