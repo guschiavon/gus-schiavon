@@ -55,20 +55,8 @@ burger.addEventListener('click', function(){
 // GSAP animations
 gsap.registerPlugin(ScrollTrigger, CSSRulePlugin, MotionPathPlugin)
 
-const headerTl = gsap.timeline({
-  scrollTrigger: {
-    duration: 1,
-    trigger: ".divider-lg",
-    start: "top 30%",
-    end: "bottom 15%",
-    scrub: 0.3
-  }
-})
+const divider = document.getElementById("divider");
 const header = document.getElementById("title-section")
-
-headerTl.to(header, {
-  opacity: 0
-})
 
 const portfolioTl = gsap.timeline({
   scrollTrigger: {
@@ -76,7 +64,7 @@ const portfolioTl = gsap.timeline({
     trigger: ".portfolio-highlight",
     start: "top center",
     end: "bottom center",
-    scrub: 0.5
+    scrub: 1
   }
 })
 const greenLine = CSSRulePlugin.getRule(".portfolio-highlight-title::before")
@@ -85,10 +73,66 @@ portfolioTl.to(greenLine, {
   width: "200%"
 })
 
-const navTl = gsap.timeline({
-  scrollTrigger: {
-    markers: true,
-    trigger: ".divider-lg",
-    start: "top 12%",
+ScrollTrigger.matchMedia({
+  "(max-width: 676px)": function() {
+    let headerTl = gsap
+      .timeline({
+        scrollTrigger: {
+          duration: 0.7,
+          start: "top 30%",
+          end: "bottom 23%",
+          trigger: divider,
+          scrub: true,
+        },
+      })
+      .to(header, {
+        opacity: 0,
+      });
+  },
+
+  "(max-width: 768px)": function() {
+    
+    const navTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: divider,
+        start: "top 14%",
+        endTrigger: "#footer",
+        pin: true,
+        pinSpacing: false,
+      },
+    });
+  },
+
+  "(max-width: 1023px)": function(){
+
+    let headerTl = gsap
+      .timeline({
+        scrollTrigger: {
+          // markers: true,
+          start: "top 25%",
+          end: "bottom",
+          trigger: divider,
+          scrub: true
+        },
+      })
+      .to(header, {
+        opacity: 0,
+      });
+  },
+
+  "(min-width: 1024px)": function(){
+    let headerTl = gsap.timeline({
+      scrollTrigger: {
+        duration: 1,
+        trigger: divider,
+        start: "top 30%",
+        end: "bottom 15%",
+        scrub: 0.3
+      }
+    })
+    .to(header, {
+       opacity: 0,
+    });
   }
 })
+

@@ -9,7 +9,7 @@ short_description: "Blazing-fast Static Sites. Do-all Apps. Modern eCommerce sho
     <h1 class="left">{{page.title}}</h1>
     <h4>{{page.subtitle}}</h4>
   </div>
-  <hr class="divider-lg mb-4">
+  <hr id="divider" class="divider-lg mb-4">
   <div class="grid-noGutter-spaceBetween portfolios">
     {% assign portfolios = site.portfolios | sort: "index" %}
     {% for portfolio in portfolios %}

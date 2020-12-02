@@ -3,7 +3,7 @@
 {% include structure/head.html %}
   <body id="body" class="grid-noGutter-spaceBetween">
     <header class="col-2">
-      <div class="sticky-nav py-lg px-md">
+      <div id="sticky-nav" class="sticky-nav py-lg px-md">
         <a id="nav-brand" href="/" class="nav-brand">its<strong>gus</strong>.dev</a>
         {% include structure/nav.html %}
         <label for="switch" id="switch-toggle" class="switch-toggle">
@@ -13,7 +13,7 @@
       </div>
     </header>
     {{content}}
-    <footer></footer>
+    <footer id="footer"></footer>
     {% include structure/scripts.html %}
     <script src="/js/functions.js"></script>
   </body>
