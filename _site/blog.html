@@ -8,19 +8,20 @@
   <link rel="stylesheet" href="/styles/main.css">
 </head>
   <body id="body" class="grid-noGutter-spaceBetween">
-    <header class="col-2">
-      <div id="sticky-nav" class="sticky-nav py-lg px-md">
-        <a id="nav-brand" href="/" class="nav-brand">its<strong>gus</strong>.dev</a>
-        <button id="burger" class="burger">
+    <header id="header" class="col-2">
+      <div id="gradient">
+        <div id="sticky-nav" class="sticky-nav py-lg px-md">
+          <a id="nav-brand" href="/" class="nav-brand nav-link" aria-label="Home page">its<strong>gus</strong>.dev</a>
+          <button id="burger" class="burger">
   <span></span>
   <span></span>
   <span></span>
 </button>
-<nav id="nav" class="px-md py-md">
-  <a href="/about">About</a>
-  <a href="/portfolios">Work</a>
-  <a href="/blog">Blog</a>
-  <a href="/contact">Contact</a>  
+<nav id="nav" class="py-md">
+  <a href="/about" class="nav-link">About</a>
+  <a href="/portfolios" class="nav-link">Work</a>
+  <a href="/blog" class="nav-link">Blog</a>
+  <a href="/contact" class="nav-link">Contact</a>  
   <div>
   
     <a href="https://linkedin.com/in/gus.schiavon" target="_blank" rel="noopener noreferrer" class="social-icon">
@@ -49,10 +50,11 @@
     
   </div>
 </nav>
-        <label for="switch" id="switch-toggle" class="switch-toggle">
-          <input type="checkbox" id="switch" class="switch"/>
-          <span class="switch-slider"></span>
-        </label>
+          <label for="switch" id="switch-toggle" class="switch-toggle">
+            <input type="checkbox" id="switch" class="switch"/>
+            <span class="switch-slider"></span>
+          </label>
+        </div>
       </div>
     </header>
     <main class="blog-home col-9_sm-12">

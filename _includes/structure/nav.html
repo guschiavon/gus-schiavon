@@ -3,11 +3,11 @@
   <span></span>
   <span></span>
 </button>
-<nav id="nav" class="px-md py-md">
-  <a href="/about">About</a>
-  <a href="/portfolios">Work</a>
-  <a href="/blog">Blog</a>
-  <a href="/contact">Contact</a>  
+<nav id="nav" class="py-md">
+  <a href="/about" class="nav-link">About</a>
+  <a href="/portfolios" class="nav-link">Work</a>
+  <a href="/blog" class="nav-link">Blog</a>
+  <a href="/contact" class="nav-link">Contact</a>  
   <div>
   {% for item in site.data.settings.general_settings.social %}
     <a href="{{item.url}}" target="_blank" rel="noopener noreferrer" class="social-icon">{% include social-icons.html icon=item.icon %}</a>

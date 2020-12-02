@@ -49,7 +49,7 @@
     padding-top: 7rem;
     padding-right: 2.5rem;
   }
-   .sticky-nav {
+  .sticky-nav {
     top: 7rem;
   }
   .portfolio-container {
@@ -96,6 +96,7 @@
     padding-right:1rem;
   }
   nav {
+    display: none;
     opacity: 0;
   }
   .nav-brand {
@@ -108,6 +109,23 @@
   }
   .post-title {
     font-size: 3.5rem;
+    display: inline-block;
+    text-indent: 0;
+    line-height: 1;
+  }
+  .post-publish {
+    top:0;
+    span {
+      font-size: 1.5rem;
+      &:nth-of-type(2) {
+        font-size: 1rem;
+      }
+    }
+  }
+  .post-category {
+    margin: unset;
+    margin-top: 1rem;
+    font-size: 0.8rem;
   }
 }
 @media (min-width: 320px) and (max-width: 1023px) {

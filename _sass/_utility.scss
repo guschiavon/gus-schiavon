@@ -203,12 +203,23 @@
 
 // dividers
 .divider-lg {
+  position: relative;
   border: none;
   background-color: $accent-color;
   height: 10px;
   width: 100%;
+  z-index: 1000;
 }
 .border-bottom {
   border-bottom: 5px solid $accent-color;
   display: inline-block;
+}
+
+// Gradients
+#gradient {
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
 }
