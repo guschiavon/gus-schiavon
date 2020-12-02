@@ -2,23 +2,26 @@
 layout: default
 ---
 <main class="col-9">
-  <h1>{{page.title}}</h1>
-  <h4>{{page.stack}}</h4>
+  <div id="title-section">
+    <h1>{{page.title}}</h1>
+    <h4>{{page.stack}}</h4>
+  </div>
   <hr class="divider-lg mb-2">
   <div class="portfolio-hero-image mb-2">
     <img src="{{page.hero_image}}" alt="">
   </div>
   <p>{{content}}</p>
-  <span class="divider-code"></span>
   {% for highlight in page.portfolio_highlights %}
   <div class="grid-noGutter-spaceBetween{% cycle ' ', '-reverse' %} portfolio-highlight">
-    <div class="col-5-middle portfolio-thumb">
+    <div class="col-5_md-6-middle portfolio-thumb">
       <img src="{{highlight.image}}" alt="">
     </div>
-    <div class="col-5-middle {% cycle ' ', 'right' %}">
-      <h4 class="portfolio-highlight-title mb-1">{{highlight.title}}</h4>
-      <div class="txt-small">
-        {{highlight.text_content_html}}
+    <div class="col-5_md-6-middle {% cycle ' ', 'right' %}">
+      <div class="portfolio-highlight-content">
+        <h4 class="portfolio-highlight-title mb-1">{{highlight.title}}</h4>
+        <div class="txt-small">
+          {{highlight.text_content_html}}
+        </div>
       </div>
     </div>
   </div>

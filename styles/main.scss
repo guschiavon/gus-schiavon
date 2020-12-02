@@ -10,8 +10,12 @@
   $light-color: {{site.data.settings.theme.light_color}};
   $accent-color: {{site.data.settings.theme.accent_color}};
   
-  $heading-font-size: 8rem;
-  $body-font-size: 2rem;
+ :root {
+   --heading-font-size: 8rem;
+   --body-font-size: 2rem;
+   --margin: 1rem;
+   --padding: 1rem;
+ }
 
 @import
   "_utility",

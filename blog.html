@@ -2,10 +2,11 @@
 layout: default
 ---
 <main class="blog-home col-9">
-  <h1>Blog*</h1>
-  <h4 class="txt-thin">*or the (mis)adventures of a frontend developer</h4>
+  <div id="title-section">
+    <h1>Blog*</h1>
+    <h4 class="txt-thin">*or the (mis)adventures of a frontend developer</h4>
+  </div>
   <hr class="divider-lg mb-2">
-  
     {% for post in site.posts %}
     <div class="post-container mb-3">
       <div class="post-publish mr-2">
@@ -13,14 +14,12 @@ layout: default
         <span class="post-month txt-bold">{{post.date | date: "%b" }}</span>
         <span class="post-year txt-bold">{{post.date | date: "%y" }}</span>
         <hr>
-      </div>
-      <h2 class="post-title ml-4"><a href="{{post.url}}">{{post.title}}</a></h2>  
-      {% for category in post.categories %}
-      
-        <h5 class="post-category"><a href="">{{category}}</a></h5>
-        {% endfor %}
-        <p class="post-preview py-md">{{post.short_description | truncate: 140 }}</p>
-        <!-- <a href="{{post.url}}" class="btn">Read</a> -->
+    </div>
+    <h2 class="post-title ml-4"><a href="{{post.url}}">{{post.title}}</a></h2>  
+    {% for category in post.categories %}  
+      <h5 class="post-category"><a href="">{{category}}</a></h5>
+      {% endfor %}
+      <p class="post-preview py-md">{{post.short_description | truncate: 140 }}</p>
     {% endfor %}
   </div>
 </main>

@@ -10,13 +10,17 @@
   <body id="body" class="grid-noGutter-spaceBetween">
     <header class="col-2">
       <div class="sticky-nav py-lg px-md">
-        <a href="/" class="nav-brand"><strong>Gus</strong>Schiavon</a>
-        <nav class="px-md py-md">
+        <a id="nav-brand" href="/" class="nav-brand">its<strong>gus</strong>.dev</a>
+        <button id="burger" class="burger">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+<nav id="nav" class="px-md py-md">
   <a href="/about">About</a>
   <a href="/portfolios">Work</a>
   <a href="/blog">Blog</a>
-  <a href="/contact">Contact</a>
-  
+  <a href="/contact">Contact</a>  
   <div>
   
     <a href="https://linkedin.com/in/gus.schiavon" target="_blank" rel="noopener noreferrer" class="social-icon">
@@ -52,10 +56,11 @@
       </div>
     </header>
     <main class="blog-home col-9">
-  <h1>Blog*</h1>
-  <h4 class="txt-thin">*or the (mis)adventures of a frontend developer</h4>
+  <div id="title-section">
+    <h1>Blog*</h1>
+    <h4 class="txt-thin">*or the (mis)adventures of a frontend developer</h4>
+  </div>
   <hr class="divider-lg mb-2">
-  
     
     <div class="post-container mb-3">
       <div class="post-publish mr-2">
@@ -63,14 +68,12 @@
         <span class="post-month txt-bold">Nov</span>
         <span class="post-year txt-bold">20</span>
         <hr>
-      </div>
-      <h2 class="post-title ml-4"><a href="/2020/my-second-post">Rails blog</a></h2>  
+    </div>
+    <h2 class="post-title ml-4"><a href="/2020/my-second-post">Rails blog</a></h2>  
       
+      <h5 class="post-category"><a href="">app development</a></h5>
       
-        <h5 class="post-category"><a href="">app development</a></h5>
-        
-        <p class="post-preview py-md">Nizzle interdum volutpat gangster. Ut fo shizzle adipiscing lorizzle. That's the shizzle non est. Nulla sapien shiz, ultrices boom shacka...</p>
-        <!-- <a href="/2020/my-second-post" class="btn">Read</a> -->
+      <p class="post-preview py-md">Nizzle interdum volutpat gangster. Ut fo shizzle adipiscing lorizzle. That's the shizzle non est. Nulla sapien shiz, ultrices boom shacka...</p>
     
     <div class="post-container mb-3">
       <div class="post-publish mr-2">
@@ -78,17 +81,14 @@
         <span class="post-month txt-bold">Nov</span>
         <span class="post-year txt-bold">20</span>
         <hr>
-      </div>
-      <h2 class="post-title ml-4"><a href="/2020/my-first-post">Jekyll blog</a></h2>  
+    </div>
+    <h2 class="post-title ml-4"><a href="/2020/my-first-post">Jekyll blog</a></h2>  
       
-      
-        <h5 class="post-category"><a href="">static site</a></h5>
+      <h5 class="post-category"><a href="">static site</a></h5>
         
+      <h5 class="post-category"><a href="">ssg</a></h5>
       
-        <h5 class="post-category"><a href="">ssg</a></h5>
-        
-        <p class="post-preview py-md">Nizzle interdum volutpat gangster. Ut fo shizzle adipiscing lorizzle. That's the shizzle non est. Nulla sapien shiz, ultrices boom shacka...</p>
-        <!-- <a href="/2020/my-first-post" class="btn">Read</a> -->
+      <p class="post-preview py-md">Nizzle interdum volutpat gangster. Ut fo shizzle adipiscing lorizzle. That's the shizzle non est. Nulla sapien shiz, ultrices boom shacka...</p>
     
     <div class="post-container mb-3">
       <div class="post-publish mr-2">
@@ -96,17 +96,21 @@
         <span class="post-month txt-bold">Nov</span>
         <span class="post-year txt-bold">20</span>
         <hr>
-      </div>
-      <h2 class="post-title ml-4"><a href="/2020/my-third-post">A very long blog title about CSS styling</a></h2>  
+    </div>
+    <h2 class="post-title ml-4"><a href="/2020/my-third-post">A very long blog title about CSS styling</a></h2>  
       
+      <h5 class="post-category"><a href="">app development</a></h5>
       
-        <h5 class="post-category"><a href="">app development</a></h5>
-        
-        <p class="post-preview py-md">Nizzle interdum volutpat gangster. Ut fo shizzle adipiscing lorizzle. That's the shizzle non est. Nulla sapien shiz, ultrices boom shacka...</p>
-        <!-- <a href="/2020/my-third-post" class="btn">Read</a> -->
+      <p class="post-preview py-md">Nizzle interdum volutpat gangster. Ut fo shizzle adipiscing lorizzle. That's the shizzle non est. Nulla sapien shiz, ultrices boom shacka...</p>
     
   </div>
 </main>
+
+    <footer></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/MotionPathPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
     <script src="/js/functions.js"></script>
   </body>

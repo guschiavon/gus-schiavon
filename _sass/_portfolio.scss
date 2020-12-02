@@ -79,16 +79,17 @@
   &::before {
     content: "";
     position: absolute;
-    right: 0;
+    left: 0;
     bottom: 0;
-    width: 200%;
+    width: 100%;
+    max-width: 700px;
     height: 5px;
     background-color: $accent-color;
   }
 }
 .portfolio-highlight:nth-of-type(odd) {
   .portfolio-highlight-title::before {
-    right: unset;
-    left:0; 
+    right: 0;
+    left: unset; 
   }
 }

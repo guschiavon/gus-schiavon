@@ -10,13 +10,17 @@
   <body id="body" class="grid-noGutter-spaceBetween">
     <header class="col-2">
       <div class="sticky-nav py-lg px-md">
-        <a href="/" class="nav-brand"><strong>Gus</strong>Schiavon</a>
-        <nav class="px-md py-md">
+        <a id="nav-brand" href="/" class="nav-brand">its<strong>gus</strong>.dev</a>
+        <button id="burger" class="burger">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+<nav id="nav" class="px-md py-md">
   <a href="/about">About</a>
   <a href="/portfolios">Work</a>
   <a href="/blog">Blog</a>
-  <a href="/contact">Contact</a>
-  
+  <a href="/contact">Contact</a>  
   <div>
   
     <a href="https://linkedin.com/in/gus.schiavon" target="_blank" rel="noopener noreferrer" class="social-icon">
@@ -52,8 +56,10 @@
       </div>
     </header>
     <main class="col-9">
-  <h1>Bogotá</h1>
-  <h4>Jekyll/GSAP</h4>
+  <div id="title-section">
+    <h1>Bogotá</h1>
+    <h4>Jekyll/GSAP</h4>
+  </div>
   <hr class="divider-lg mb-2">
   <div class="portfolio-hero-image mb-2">
     <img src="/assets/images/gus-profile.jpg" alt="">
@@ -62,34 +68,43 @@
 
 <p>The <a href="https://somosbogota.tv" target="_blank">Bogotá</a> team approached me for developing their new website to represent their new visual identity.</p>
 </p>
-  <span class="divider-code"></span>
   
   <div class="grid-noGutter-spaceBetween  portfolio-highlight">
-    <div class="col-5-middle portfolio-thumb">
+    <div class="col-5_md-6-middle portfolio-thumb">
       <img src="/assets/images/gus-2020.jpg" alt="">
     </div>
-    <div class="col-5-middle  ">
-      <h4 class="portfolio-highlight-title mb-1">Sassy theme</h4>
-      <div class="txt-small">
-        <p>By using Sass variables and integrating with a global settings file, the client is able to change the theme styles (fonts, colors, navigation, and more) through the <a href="https://cloudcannon.com">CloudCannon CMS</a> interface.</p>
+    <div class="col-5_md-6-middle  ">
+      <div class="portfolio-highlight-content">
+        <h4 class="portfolio-highlight-title mb-1">Sassy theme</h4>
+        <div class="txt-small">
+          <p>By using Sass variables and integrating with a global settings file, the client is able to change the theme styles (fonts, colors, navigation, and more) through the <a href="https://cloudcannon.com">CloudCannon CMS</a> interface.</p>
+        </div>
       </div>
     </div>
   </div>
   
   <div class="grid-noGutter-spaceBetween-reverse portfolio-highlight">
-    <div class="col-5-middle portfolio-thumb">
+    <div class="col-5_md-6-middle portfolio-thumb">
       <img src="/assets/images/gus-2020.jpg" alt="">
     </div>
-    <div class="col-5-middle right">
-      <h4 class="portfolio-highlight-title mb-1">Responsive images</h4>
-      <div class="txt-small">
-        <p>Multiple image versions & sizes are generated upon upload by leveraging the Jekyll gem library, resulting in superb responsivity for the site's content.</p>
+    <div class="col-5_md-6-middle right">
+      <div class="portfolio-highlight-content">
+        <h4 class="portfolio-highlight-title mb-1">Responsive images</h4>
+        <div class="txt-small">
+          <p>Multiple image versions & sizes are generated upon upload by leveraging the Jekyll gem library, resulting in superb responsivity for the site's content.</p>
+        </div>
       </div>
     </div>
   </div>
   
   <blockquote class="my-2"><p>Being a studio specialised in motion graphics, we wanted to add some dynamism to our site. Gus helped us implement the scroll animations just as requested.</p><cite>Caja Guedes, co-founder</cite></blockquote>
 </main>
+    <footer></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/MotionPathPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+
     <script src="/js/functions.js"></script>
   </body>
 </html>  

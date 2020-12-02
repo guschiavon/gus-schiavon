@@ -4,7 +4,7 @@
   <body id="body" class="grid-noGutter-spaceBetween">
     <header class="col-2">
       <div class="sticky-nav py-lg px-md">
-        <a href="/" class="nav-brand"><strong>Gus</strong>Schiavon</a>
+        <a id="nav-brand" href="/" class="nav-brand">its<strong>gus</strong>.dev</a>
         {% include structure/nav.html %}
         <label for="switch" id="switch-toggle" class="switch-toggle">
           <input type="checkbox" id="switch" class="switch"/>
@@ -13,6 +13,8 @@
       </div>
     </header>
     {{content}}
+    <footer></footer>
+    {% include structure/scripts.html %}
     <script src="/js/functions.js"></script>
   </body>
 </html>  

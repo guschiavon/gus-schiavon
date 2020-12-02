@@ -1,9 +1,13 @@
-<nav class="px-md py-md">
+<button id="burger" class="burger">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+<nav id="nav" class="px-md py-md">
   <a href="/about">About</a>
   <a href="/portfolios">Work</a>
   <a href="/blog">Blog</a>
-  <a href="/contact">Contact</a>
-  
+  <a href="/contact">Contact</a>  
   <div>
   {% for item in site.data.settings.general_settings.social %}
     <a href="{{item.url}}" target="_blank" rel="noopener noreferrer" class="social-icon">{% include social-icons.html icon=item.icon %}</a>
