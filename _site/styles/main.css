@@ -186,7 +186,7 @@ nav a:last-of-type { margin-bottom: none; }
 
 .burger { display: none; flex-direction: column; justify-content: space-between; position: fixed; top: 3rem; right: 1.5rem; width: 35px; height: 25px; background-color: unset; border: none; z-index: 1001; }
 
-.burger span { background: #333; width: inherit; height: 3px; transition: 0.1s all; }
+.burger span { border-radius: 3px; background: #333; width: inherit; height: 3px; transition: 0.1s all; }
 
 .burger.open { justify-content: center; }
 
@@ -196,13 +196,13 @@ nav a:last-of-type { margin-bottom: none; }
 
 .burger.open span:nth-of-type(3) { transform: rotate(-45deg); margin-top: -3px; }
 
-nav.mobile-menu { position: fixed; display: flex; flex-direction: row; top: 1.5rem; left: 1rem; z-index: 1000; }
+nav.mobile-menu { position: fixed; display: flex; opacity: 1; flex-direction: row; top: 1.5rem; left: 1rem; z-index: 1000; transition: 0.3s all; }
 
 nav.mobile-menu a { padding: 0 0.5rem; }
 
 nav.mobile-menu .social-icon { display: none; }
 
-.push { transform: translateX(-400px); }
+.push { transform: translateX(-400px); transition: 0.5s all; }
 
 a.btn { background-color: #333; color: #d2d2d2; padding: 0.8rem 1.5rem; font-size: 1.5rem; }
 
@@ -283,7 +283,7 @@ a.btn { background-color: #333; color: #d2d2d2; padding: 0.8rem 1.5rem; font-siz
 
 @media (min-width: 769px) and (max-width: 1023px) { :root { --body-font-size: 1.3rem; --heading-font-size: 4.5rem; --margin: 0.8rem; --padding: 0.8rem; } body { padding-top: 7rem; padding-right: 2.5rem; } .sticky-nav { top: 7rem; } .portfolio-container { align-items: flex-start; height: 500px; } .portfolio-thumb { height: 250px; } .portfolio-highlight-title::before { max-width: 300px; width: 150%; } .portfolio-highlight-content { padding: 0 1.5rem; } blockquote p { font-size: calc(var(--body-font-size) * 1.1); } blockquote p::before { font-size: 2rem; } .nav-brand { font-size: 2rem; } .social-icon svg { padding: 0.3rem; } }
 
-@media (min-width: 320px) and (max-width: 768px) { :root { --body-font-size: 1.4rem; --heading-font-size: 3.5rem; --margin: 0.8rem; --padding: 0.8rem; } body { padding-top: 8rem; padding-right: 1.5rem; padding-left: 1.5rem; } main .px-md { padding-left: 1rem; padding-right: 1rem; } nav { display: none; } .nav-brand { position: fixed; top: 2rem; left: 1.5rem; } .burger { display: flex; } .post-title { font-size: 3.5rem; } }
+@media (min-width: 320px) and (max-width: 768px) { :root { --body-font-size: 1.4rem; --heading-font-size: 3.5rem; --margin: 0.8rem; --padding: 0.8rem; } body { padding-top: 8rem; padding-right: 1.5rem; padding-left: 1.5rem; } main .px-md { padding-left: 1rem; padding-right: 1rem; } nav { opacity: 0; } .nav-brand { position: fixed; top: 2rem; left: 1.5rem; } .burger { display: flex; } .post-title { font-size: 3.5rem; } }
 
 @media (min-width: 320px) and (max-width: 1023px) { .profile-image { width: 100%; margin: unset; margin-bottom: 2rem; } }
 

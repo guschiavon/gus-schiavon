@@ -49,6 +49,7 @@ nav {
   border: none;   
   z-index: 1001;
   span {
+    border-radius: 3px;
     background: $dark-color;
     width: inherit;
     height: 3px;
@@ -72,10 +73,12 @@ nav {
 nav.mobile-menu {
   position: fixed;
   display: flex;
+  opacity: 1;
   flex-direction: row;
   top: 1.5rem;
   left: 1rem;
   z-index: 1000;
+  transition: 0.3s all;
   a {
     padding: 0 0.5rem;
   }
@@ -85,4 +88,5 @@ nav.mobile-menu {
 }
 .push {
   transform: translateX(-400px);
+  transition: 0.5s all;
 }
