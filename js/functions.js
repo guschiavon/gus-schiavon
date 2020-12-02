@@ -114,7 +114,7 @@ ScrollTrigger.matchMedia({
           trigger: divider,
           start: "top 25%",
           end: "bottom",
-          toggleActions: "restart pause reverse pause",
+          toggleActions: "play none none reverse",
           scrub: true,
         },
       })
@@ -131,7 +131,7 @@ ScrollTrigger.matchMedia({
           trigger: divider,
           start: "top 30%",
           end: "bottom 15%",
-          toggleActions: "restart pause reverse pause",
+          toggleActions: "play none none reverse",
           scrub: true,
         },
       })
