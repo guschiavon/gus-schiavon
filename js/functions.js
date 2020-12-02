@@ -82,6 +82,7 @@ ScrollTrigger.matchMedia({
           trigger: divider,
           start: "top 30%",
           end: "bottom 23%",
+          toggleActions: "restart pause reverse pause",
           scrub: true,
         },
       })
@@ -113,7 +114,8 @@ ScrollTrigger.matchMedia({
           trigger: divider,
           start: "top 25%",
           end: "bottom",
-          scrub: true
+          toggleActions: "restart pause reverse pause",
+          scrub: true,
         },
       })
       .to(header, {
@@ -122,18 +124,20 @@ ScrollTrigger.matchMedia({
   },
 
   "(min-width: 1024px)": function(){
-    let headerTl = gsap.timeline({
-      scrollTrigger: {
-        duration: 1,
-        trigger: divider,
-        start: "top 30%",
-        end: "bottom 15%",
-        scrub: true
-      }
-    })
-    .to(header, {
-       opacity: 0,
-    });
+    let headerTl = gsap
+      .timeline({
+        scrollTrigger: {
+          duration: 1,
+          trigger: divider,
+          start: "top 30%",
+          end: "bottom 15%",
+          toggleActions: "restart pause reverse pause",
+          scrub: true,
+        },
+      })
+      .to(header, {
+        opacity: 0,
+      });
   }
 })
 
