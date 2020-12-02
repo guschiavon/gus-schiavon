@@ -82,7 +82,7 @@ ScrollTrigger.matchMedia({
           trigger: divider,
           start: "top 30%",
           end: "bottom 23%",
-          toggleActions: "restart pause reverse pause",
+          toggleActions: "play none none reverse",
           scrub: true,
         },
       })
