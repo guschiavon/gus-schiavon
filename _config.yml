@@ -1,3 +1,5 @@
+url: 'https://itsgus.dev'
+
 cloudcannon:
   data: true
 
@@ -20,7 +22,11 @@ plugins:
   - jekyll-archives
 
 webp:
-  enable: true
+  enabled: true
+  quality: 75
+  img_dir: ["/assets/images/", "assets/images"]
+  nested: true
+  regenerate: false
 
 icons:
   - "Facebook"
@@ -40,3 +46,11 @@ categories:
   - javascript
   - gsap
   - webflow
+  - shopify
+  - ssg
+  - gatsby
+  - react.js
+  - vue.js
+  - node.js
+  - graphql
+  - postgresql

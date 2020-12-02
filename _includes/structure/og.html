@@ -1,0 +1,43 @@
+<title>{% if page.title == nil %}{{site.data.settings.general_settings.site_title}}{%else%}{{page.title}}{%endif%}</title>
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{%if page.title != nil %}{{ page.title }}{% else %}{{ site.data.settings.general_settings.site_title }}{% endif %}">
+<meta property="og:url" content="{{site.data.settings.general_settings.site_url}}{{ page.url }}">
+<meta property="og:image" content="{% if page.preview_image != nil %}{{site.data.settings.general_settings.site_url}}{{page.preview_image}} {% else %}{{site.data.settings.general_settings.site_url}}{{ site.data.settings.general_settings.preview_image }}{% endif %}" />
+<meta property="og:image:url" content="{% if page.preview_image != nil %}{{site.data.settings.general.site_url}}{{page.preview_image}} {% else %}{{site.data.settings.general_settings.site_url}}{{ site.data.settings.general_settings.preview_image }}{% endif %}" />
+<meta property="og:image:secure_url" content="{% if page.preview_image != nil %}{{site.data.settings.general_settings.site_url}}{{page.preview_image}} {% else %}{{site.data.settings.general_settings.site_url}}{{ site.data.settings.general_settings.preview_image }}{% endif %}" />
+<meta property="og:image:type" content="image/jpg" />
+<meta property="og:image:width" content="600" />
+<meta property="og:image:alt" content="{{page.preview_image_alt_text}}" />
+<meta property="og:site_name" content="{{ site.data.settings.general_settings.site_title }}">
+<meta property="og:description" content="{% if page.description != nil %}{{ page.description }}{% else %}{{ site.data.settings.seo.description_text }}{% endif %}">
+<meta property="fb:app_id" content="{{site.data.settings.seo.fb_app_id}}">
+
+<!-- <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="{%if page.title != nil %}{{ page.title }}{% else %}{{ site.data.settings.general_settings.site_title }}{% endif %}">
+<meta name="twitter:description" content="{% if page.description != nil %}{{ page.description }}{% else %}{{ site.data.settings.seo.site_description_text }}{% endif %}">
+<meta name="twitter:site" content="{{site.data.settings.general_settings.social.twitter_handle}}" />
+<meta name="twitter:creator" content="{{site.data.settings.general.twitter_handle}}">
+<meta name="twitter:card" content="summary"> -->
+
+<meta name="keywords" content="{% if page.keywords != nil %} {{page.keywords}} {% else %} {% for keyword in site.data.settings.seo.keywords %} {{ keyword }} {% endfor %} {% endif %}">
+<meta itemprop="description" name="description" content="{% if page.description != nil %}{{ page.description | truncate: 160 }} {% else %} {{ site.data.settings.seo.description_text | truncate: 160  }} {% endif %}" />
+<!-- <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png"> -->
+<!-- <meta name="theme-color" content="#ffffff"> -->
+
+<link rel="canonical" href="{{site.data.settings.general_settings.site_url}}">

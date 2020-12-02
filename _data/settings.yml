@@ -1,5 +1,7 @@
 general_settings:
   site_title: Frontend Web Development
+  site_url: 'https://itsgus.dev'
+  preview_image:
   social:
     - icon: "LinkedIn"
       url: 'https://linkedin.com/in/gus.schiavon'
@@ -11,6 +13,10 @@ theme:
   dark_color: '#333'
   light_color: '#d2d2d2'
   accent_color: '#1fc71f'
+seo:
+  description_text:
+  fb_app_id:
+  keywords: []
 configuration:
   head_code_block: '
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css">
