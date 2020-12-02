@@ -7,8 +7,8 @@ short_description: Reusable templates with multiple sections for DIY deployment 
 stack: Jekyll/Sass
 preview_image: /assets/images/gus-2020.jpg
 hero_image: /assets/images/gus-profile.jpg
-testimonial: Being a studio specialised in motion graphics, we wanted to add some dynamism to our site. Gus helped us implement the scroll animations just as requested.
-testimonial_author: Caja Guedes, co-founder
+testimonial: Our business model was only possible due to the solutions implemented by Gus.
+testimonial_author: Jasmine, co-founder/owner
 portfolio_highlights:
   - title: Sassy theme
     text_content_html: >-

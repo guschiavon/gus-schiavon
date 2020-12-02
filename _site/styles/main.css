@@ -10,6 +10,8 @@ img { max-width: 100%; }
 
 [data-theme="dark"] .btn { background-color: #d2d2d2; color: #333; }
 
+[data-theme="dark"] .btn:hover, [data-theme="dark"] .btn:focus { background-color: #1fc71f; }
+
 [data-theme="dark"] blockquote { border-left: 1rem solid; border-color: #e4e4e4; }
 
 [data-theme="dark"] code { color: #333; background-color: silver; }
@@ -208,6 +210,8 @@ nav.mobile-menu .social-icon { display: none; }
 
 a.btn { background-color: #333; color: #d2d2d2; padding: 0.8rem 1.5rem; font-size: 1.5rem; }
 
+a.btn:hover, a.btn:focus { background-color: #666666; }
+
 .switch { opacity: 0; height: 0; width: 0; }
 
 .switch-toggle { position: fixed; bottom: 2rem; left: 2rem; width: 60px; height: 34px; }
@@ -225,7 +229,7 @@ a.btn { background-color: #333; color: #d2d2d2; padding: 0.8rem 1.5rem; font-siz
 
 .post-container { position: relative; }
 
-.post-category { display: inline-block; margin: 0 0.6rem; padding: 0.2rem 0.8rem; text-transform: uppercase; font-weight: 200; font-size: 1rem; border: 1px solid; border-radius: 5px; }
+.post-category { display: inline-block; margin-right: 0.8rem; padding: 0.2rem 0.8rem; text-transform: uppercase; font-weight: 200; font-size: 1rem; border: 1px solid; border-radius: 5px; }
 
 .post-category:last-of-type { margin-right: unset; }
 

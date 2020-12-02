@@ -7,18 +7,20 @@ short_description: A Jekyll site with integrated Shopify store
 stack: Jekyll/Shopify
 preview_image: /assets/images/gus-2020.jpg
 hero_image: /assets/images/gus-profile.jpg
-testimonial: Being a studio specialised in motion graphics, we wanted to add some dynamism to our site. Gus helped us implement the scroll animations just as requested.
-testimonial_author: Caja Guedes, co-founder
+testimonial: We have made the right decision to migrate from WordPress to our new, beautiful static Jekyll site and integrated Shopify store.
+testimonial_author: Hannah, owner
 portfolio_highlights:
-  - title: Sassy theme
+  - title: Shopify Integration
     text_content_html: >-
-      <p>By using Sass variables and integrating with a global settings file, the client is able to change the theme styles (fonts, colors, navigation, and more) through the <a href="https://cloudcannon.com">CloudCannon CMS</a> interface.</p>
+      <p>A custom Jekyll frontend and integration with Shopify store so Hannah and The Style Lounge team can manage both content and inventory with ease</p>
     image: /assets/images/gus-2020.jpg  
-  - title: Responsive images
+  - title: Animation Library
     text_content_html: >-
-      <p>Multiple image versions & sizes are generated upon upload by leveraging the Jekyll gem library, resulting in superb responsivity for the site's content.</p>
+      <p>Leveraging the <a href="https://michalsnik.github.io/aos/" rel="noopener noreferrer" arial-label="link to animate on scroll library">Animate On Scroll library</a>, we have added some dynamism to the page through scroll animations.</p>
     image: /assets/images/gus-2020.jpg  
 ---
 ### The brief:
 
-The [Bogotá](https://somosbogota.tv){:target="_blank"} team approached me for developing their new website to represent their new visual identity.
+Hannah and [The Style Lounge](https://thestyleloungelichfield.co.uk) team had requested an overhaul of their WordPress website: **fresh design, intuitive eCommerce integration and easy content updates** were a requirement that their WP site wasn't delivering. We agreed on the development of a **completely new** website and Shopify integration, bringing their business presentation to a whole new level.
+
+The resulting site is super performant and easy to use with the [CloudCannon CMS](https://cloudcannon.com); the inventory is managed through the Shopify app and made available through [The Style Lounge shop](https://shop.thestyleloungelichfield.co.uk) and Facebook/Instagram channels, allowing Hannah and the team to easily sell online.

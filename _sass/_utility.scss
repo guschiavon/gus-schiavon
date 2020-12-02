@@ -10,6 +10,10 @@
   .btn {
     background-color: $light-color;
     color: $dark-color;
+    &:hover,
+    &:focus {
+      background-color: $accent-color;
+    }
   }
   blockquote {
     border-left: 1rem solid;
