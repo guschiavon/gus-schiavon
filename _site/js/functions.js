@@ -104,8 +104,8 @@ ScrollTrigger.matchMedia({
         pin: true,
         pinSpacing: false,
         scrub: true
-      },
-    }),
+      }
+    })
   },
 
   "(max-width: 1023px)": function(){
