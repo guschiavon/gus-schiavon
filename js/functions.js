@@ -79,9 +79,9 @@ ScrollTrigger.matchMedia({
       .timeline({
         scrollTrigger: {
           duration: 0.7,
+          trigger: divider,
           start: "top 30%",
           end: "bottom 23%",
-          trigger: divider,
           scrub: true,
         },
       })
@@ -92,7 +92,8 @@ ScrollTrigger.matchMedia({
 
   "(max-width: 768px)": function() {
     
-    const navTl = gsap.timeline({
+    let navTl = gsap
+      .timeline({
       scrollTrigger: {
         trigger: divider,
         start: "top 14%",
@@ -108,10 +109,10 @@ ScrollTrigger.matchMedia({
     let headerTl = gsap
       .timeline({
         scrollTrigger: {
-          // markers: true,
+          duration: 1,
+          trigger: divider,
           start: "top 25%",
           end: "bottom",
-          trigger: divider,
           scrub: true
         },
       })
@@ -127,7 +128,7 @@ ScrollTrigger.matchMedia({
         trigger: divider,
         start: "top 30%",
         end: "bottom 15%",
-        scrub: 0.3
+        scrub: true
       }
     })
     .to(header, {
