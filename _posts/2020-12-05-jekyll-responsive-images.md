@@ -3,8 +3,14 @@ layout: post
 title: Jekyll Lazyloading Responsive Images
 subtitle: "Faster Jekyll Static Sites"
 short_description: "Responsive, lazyloading images can help us optimize the loading speed by reducing the amount of data transferred, thus improving the site's performance"
-categories: [jekyll]
-tags: [jekyll,lazy loading,responsive images]
+categories:
+  - Jekyll
+  - SSG
+tags: 
+  - Jekyll
+  - Lazy loading
+  - Responsive images
+  - CloudCannon
 ---
 ## Using jekyll-responsive-image with lazysizes
 

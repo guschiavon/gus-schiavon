@@ -1,0 +1,95 @@
+I"�<h2 id="enable-site-wide-settings-using-jekyll-and-sass">Enable site-wide settings using Jekyll and Sass</h2>
+
+<p><em>This tutorial works really well for Jekyll sites hosted on <a href="https://cloudcannon.com/" rel="nofollow" target="_blank">CloudCannon CMS</a></em>.</p>
+
+<h3 id="overview">Overview</h3>
+
+<p>Thanks to <a href="https://lilybruns.com">Lily Bruns</a> to encouraging me to learn this! Here’s the background story…</p>
+
+<p>Lily asked me to implement a <strong>structure that allows editors to easily change basic settings on their CloudCannon site</strong>, like colors, fonts, logos, etc without having to fiddle with code files. The projects are hosted on <a href="https://cloudcannon.com/" rel="nofollow" target="_blank"><strong>CloudCannon</strong></a>, a CMS for Jekyll which is quite awesome. The objective was to <em>allow editors to use the CMS’s UI for intuitive changes</em> of these settings, without having to go to a _config.yml file or similar.</p>
+
+<p>After some preliminary analysis I’ve opted to work with Sass instead of CSS Variables as it is much more powerful for this set up. With that said, it will still work with plain CSS Variables.</p>
+
+<h3 id="before-we-start">Before we start…</h3>
+
+<p>Please note that this process breakdown <strong>assumes familiarity with Sass</strong>; FreeCodeCamp has this <a href="https://www.youtube.com/watch?v=_a5j7KoflTs" rel="nofollow" target="_blank">great tutorial</a> that covers some of the basic functions (don’t be scared by the 2hr-length: focus on the first half hour for a good insight on how Sass works).</p>
+
+<h3 id="set-up--folder-structure">Set-up &amp; Folder Structure</h3>
+
+<ol>
+  <li>First, let’s install a Sass/SCSS processor on our code editor (Atom, etc.). This will ensure that scss files are processed into css when we save them.</li>
+  <li>Next, let’s set up our folder structure as usual; let’s also add some markup to our <code class="language-plaintext highlighter-rouge">index.html</code> file for reference.</li>
+  <li>Then, we create a <code class="language-plaintext highlighter-rouge">style.scss</code> file and place it on our styles folder: this is our <strong>main</strong> scss file which Jekyll will render.</li>
+  <li>We can create a <code class="language-plaintext highlighter-rouge">_sass</code> folder and include all our <strong>Sass partials</strong>, mixins and all here (the Sass ‘@import’ partials).</li>
+  <li>Next, we create a <code class="language-plaintext highlighter-rouge">_data</code> <strong><em>folder</em></strong> and create a <code class="language-plaintext highlighter-rouge">settings.yml</code> <strong><em>file</em></strong> inside of it: this is where we will put all the variable values for Jekyll to output from Liquid tags.</li>
+</ol>
+
+<h3 id="implementation-jekyllfy-sass">Implementation (“Jekyllfy Sass”)</h3>
+
+<h4 id="configuring-your-settingsyml-file">Configuring your <code class="language-plaintext highlighter-rouge">settings.yml</code> file</h4>
+
+<p>We should set up the structure &amp; values of our variables here. Colors, font embed codes, images, etc… Anything we want to have on the CloudCannon user interface. This will allow CloudCannon to display these keys in a user-friendly interface on their Explore view. They have a nice database of keys which are displayed with their own UI, which we can refer to <a href="https://docs.cloudcannon.com/editing/interfaces/inputs/" rel="nofollow">here</a>. As an example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>general_settings:
+  site_title: My awesome site
+  site_url: 'https://example.com'
+  preview_image:
+  social:
+    - icon: "LinkedIn"
+      url: 'https://linkedin.com/'
+    - icon: "Github"
+      url: 'https://github.com/'
+theme:
+  heading_font_family: '"Glegoo", serif;'
+  body_font_family: '"Bitter", serif;'
+  dark_color: '#222'
+  light_color: '#d2d2d2'
+  accent_color: '#1fc71f'
+seo:
+  description_text:
+  fb_app_id:
+  keywords: []
+configuration:
+  head_code_block: '
+    &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css"&gt;
+    &lt;link rel="preconnect" href="https://fonts.gstatic.com"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400&amp;family=Glegoo:wght@400;700&amp;display=swap" rel="stylesheet"&gt;'
+  body_code_block:
+</code></pre></div></div>
+
+<p>Note that some of these keys have <strong><em>underscore</em></strong> rather than a <em>dash</em>; this syntax allows CloudCannon to read the keys and provide the friendly UI for editors, so definitely <a href="https://docs.cloudcannon.com/editing/interfaces/inputs/" rel="nofollow">check their documentation</a> for more detailed information.</p>
+
+<h4 id="configuring-the-stylescss-file">Configuring the style.scss file</h4>
+
+<p>This file needs to have empty Front Matter for Jekyll to process it; <strong>we do so by adding 2 lines of 3 dashes (—) at the top of the file</strong>. So:</p>
+
+<p>-– — // Write your SCSS from here onwards</p>
+
+<p>Write our scss normally, and where we’d normally place the value for the Sass variables (that is, in our main.scss stylesheet), we place a Liquid tag to pass the values from the settings.yml file. Following this project’s example, <em>in our main.scss file</em>, instead of:</p>
+
+<p>$primary_color: ‘#479aa1’;</p>
+
+<p>we should set:</p>
+
+<p>$primary_color:;</p>
+
+<h3 id="overall-the-mainscss-file-should-look-something-like-this">Overall, the main.scss file should look something like this:</h3>
+
+<p>-– — // note the 2 lines of dashes with empty front matter above: that’s what tell Jekyll to process this file // describe your Sass variables BEFORE you add partials that take these values (like universal styles) otherwise Jekyll will throw an error as it cannot parse the information for the partial: $primary_color: ; $secondary_color: ; // write your SCSS from here, for example: h1 { color: $primary_color; } h2 { background-color: $secondary_color;} // or a better alternative, add partials from the _sass folder to render the stylesheet: @import ‘_resets’; @import ‘_typography’;</p>
+
+<h4 id="important-settings-for-_configyml-when-using-scss-partials">IMPORTANT: settings for _config.yml when using scss partials</h4>
+
+<p>In case we are using partials, we must add the following code to your _config.yml file:</p>
+
+<p>sass: sass_dir: _sass</p>
+
+<p>NB: <em>This is the path for the directory storing the scss partials; we can configure it to suit our project structure.</em></p>
+
+<h3 id="reference-repo">Reference repo</h3>
+
+<p>Here’s a reference repository to peek into some code: <a href="https://github.com/guschiavon/jekyllfy-sass">Jekyllfy Sass</a></p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>Personally I have run into errors when trying to populate <strong><em>variables located in partials</em></strong> with YAML values, so the work around is to have all the Sass variables on our main SCSS file and use @import for the actual styles. Also, we <em>cannot</em> process Sass partials with Jekyll (meaning we cannot have empty frontmatter (—) in the partial files). At least it didn’t work for me, so if you know more, please leave more comments below!</p>
+:ET
