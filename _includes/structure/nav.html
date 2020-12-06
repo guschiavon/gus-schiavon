@@ -4,10 +4,10 @@
   <span class="greenify"></span>
 </button>
 <nav id="nav" class="py-md">
-  <a href="/about" class="greenify">About</a>
-  <a href="/portfolios" class="greenify">Work</a>
-  <!-- <a href="/blog" class="greenify">Blog</a> -->
-  <a href="/contact" class="greenify">Contact</a>  
+  <a href="/about" class="greenify editable">About</a>
+  <a href="/portfolios" class="greenify editable">Work</a>
+  <a href="/blog" class="greenify editable">Blog</a>
+  <a href="/contact" class="greenify editable">Contact</a>  
   <div>
   {% for item in site.data.settings.general_settings.social %}
     <a href="{{item.url}}" target="_blank" rel="noopener noreferrer" class="social-icon">{% include social-icons.html icon=item.icon %}</a>

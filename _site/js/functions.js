@@ -60,6 +60,7 @@ const headerGradient = document.getElementById("gradient");
 const headerContent = document.getElementById("title-section");
 const greenify = document.getElementsByClassName("greenify")
 const greenLine = document.getElementsByClassName('portfolio-highlight-title-underline')
+const frame = document.getElementsByClassName('portfolio-thumb-image')
 
 const portfolioTl = gsap.timeline({
   scrollTrigger: {
@@ -74,6 +75,9 @@ const portfolioTl = gsap.timeline({
 
 portfolioTl.to(greenLine, {
   width: "200%",
+})
+.to(frame, {
+  transform: "scale(1.06)"
 })
 
 const navbar = document.getElementById('sticky-nav')

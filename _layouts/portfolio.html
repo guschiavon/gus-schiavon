@@ -6,7 +6,7 @@ layout: default
     <h1>{{page.title}}</h1>
     <h4>{{page.stack}}</h4>
   </div>
-  <hr class="divider-lg mb-2">
+  <hr id="divider" class="divider-lg mb-2">
   <div class="portfolio-hero-image mb-2">
     <img src="{{page.hero_image}}" alt="" class="responsive-image">
   </div>
@@ -19,7 +19,7 @@ layout: default
   {% for highlight in highlights %}
   <div class="grid-noGutter-spaceBetween{% cycle '', '-reverse' %} portfolio-highlight">
     <div class="col-5_md-6_sm-12-middle portfolio-thumb">
-      <img src="{{highlight.image}}" alt="{{page.title}} portfolio website by Gus Schiavon" class="responsive-image">
+      <img src="{{highlight.image}}" alt="{{page.title}} portfolio website by Gus Schiavon" class="portfolio-thumb-image responsive-image">
     </div>
     <div class="col-5_md-6_sm-12-middle {% cycle '', 'right' %}">
       <div class="portfolio-highlight-content">
@@ -37,7 +37,7 @@ layout: default
   <blockquote class="my-2"><p>{{page.testimonial_text_html}}</p><cite>{{page.testimonial_author}}</cite></blockquote>
   <section id="cta" class="cta py-lg px-md">
     <h2 class="txt-highlight">Liked {{page.title}}'s site?</h2>
-    <h4 class="editable">Then <strong>let's develop something similar</strong> to suit your business or promotional needs!</h4>
-    <h4 class="editable">It's <strong>easier than you'd think</strong>. It's gus.dev</h4>
+    <h4 class="editable">Then <strong class="txt-highlight">let's develop something similar</strong> to suit your business or promotional needs!</h4>
+    <h4 class="editable">It's <strong class="txt-highlight">easier than you'd think</strong>. It's gus.dev</h4>
   </section>
 </main>

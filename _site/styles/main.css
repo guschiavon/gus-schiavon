@@ -287,6 +287,8 @@ a.btn:hover, a.btn:focus { background-color: #555555; }
 
 .portfolio-highlight:nth-of-type(odd) .portfolio-highlight-title-underline { right: unset; left: 0; }
 
+.portfolio-highlight:nth-of-type(odd) .portfolio-thumb { border-left: none; }
+
 #contact .social-icon { display: inline-block; margin-right: 0.5rem; }
 
 #contact .social-icon svg { width: 100px; fill: #222; }
@@ -295,7 +297,7 @@ a.btn:hover, a.btn:focus { background-color: #555555; }
 
 #contact .social-icon:focus svg { fill: #1fc71f; }
 
-@media (min-width: 1024px) and (max-width: 1440px) { :root { --body-font-size: 1.5rem; --heading-font-size: 6rem; } .nav-brand { font-size: 2rem; } .portfolio-thumb { height: 300px; } .portfolio-hero-image { height: 450px; } blockquote p { font-size: calc(var(--body-font-size) * 1.2); } blockquote p::before { font-size: 2.5rem; } .portfolio-highlight-title::before { max-width: 500px; } .portfolio-overview { padding: 1rem; } .portfolio-container { height: 420px; } }
+@media (min-width: 1024px) and (max-width: 1440px) { :root { --body-font-size: 1.5rem; --heading-font-size: 6rem; } body { padding-top: 5rem; } .sticky-nav { top: 6rem; } .nav-brand { font-size: 2rem; } .portfolio-thumb { height: 300px; } .portfolio-hero-image { height: 450px; } blockquote p { font-size: calc(var(--body-font-size) * 1.2); } blockquote p::before { font-size: 2.5rem; } .portfolio-highlight-title::before { max-width: 500px; } .portfolio-overview { padding: 1rem; } .portfolio-container { height: 420px; } .profile-image { width: 400px; height: 450px; } }
 
 @media (min-width: 1024px) and (max-width: 1280px) { .portfolio-container { width: 95%; margin-right: auto; } .portfolios .portfolio:nth-of-type(even) .portfolio-container { margin-right: unset; margin-left: auto; } }
 
