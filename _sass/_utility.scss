@@ -37,7 +37,8 @@
   .portfolio-container::after {
     background-color: $dark-color;
   }
-  .social-icon svg {
+  .social-icon svg,
+  #contact .social-icon svg {
     fill: $light-color;
   }
   .burger span {

@@ -8,7 +8,7 @@ client_url: 'https://somosbogota.tv'
 stack: Jekyll/GSAP
 preview_image: /assets/images/gus-schiavon-bogota-website-preview.jpg
 hero_image: /assets/images/gus-schiavon-bogota-website.jpg
-testimonial_text: Being a studio specialised in motion graphics, we wanted to add some dynamism to our site. Gus helped us <strong>implement the scroll animations just as requested</strong> and more importantly, on schedule! We'll be upgrading our site with more features soon, and Gus will be <strong>the</strong> man to handle that!
+testimonial_text_html: Being a studio specialised in motion graphics, we wanted to add some dynamism to our site. Gus helped us <strong>implement the scroll animations just as requested</strong> and more importantly, on schedule! We'll be upgrading our site with more features soon, and Gus will be <strong>the</strong> man to handle that!
 testimonial_author: Caja, co-founder/owner
 portfolio_highlights:
   - title: GSAP Animations

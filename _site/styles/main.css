@@ -8,23 +8,23 @@ img { max-width: 100%; }
 
 .home h1, .home h2 { font-size: var(--heading-font-size); }
 
-[data-theme="dark"] { background-color: #333; color: #d2d2d2; }
+[data-theme="dark"] { background-color: #222; color: #d2d2d2; }
 
-[data-theme="dark"] .btn { background-color: #d2d2d2; color: #333; }
+[data-theme="dark"] .btn { background-color: #d2d2d2; color: #222; }
 
 [data-theme="dark"] .btn:hover, [data-theme="dark"] .btn:focus { background-color: #1fc71f; }
 
 [data-theme="dark"] blockquote { border-left: 1rem solid; border-color: #e4e4e4; }
 
-[data-theme="dark"] code { color: #333; background-color: silver; }
+[data-theme="dark"] code { color: #222; background-color: silver; }
 
 [data-theme="dark"] pre code { color: unset; background-color: unset; }
 
 [data-theme="dark"] .post-publish hr { background-color: #d2d2d2; }
 
-[data-theme="dark"] .portfolio-container::after { background-color: #333; }
+[data-theme="dark"] .portfolio-container::after { background-color: #222; }
 
-[data-theme="dark"] .social-icon svg { fill: #d2d2d2; }
+[data-theme="dark"] .social-icon svg, [data-theme="dark"] #contact .social-icon svg { fill: #d2d2d2; }
 
 [data-theme="dark"] .burger span { background: #d2d2d2; }
 
@@ -98,7 +98,7 @@ img { max-width: 100%; }
 
 .txt-highlight { color: #1fc71f; }
 
-.txt-dark { color: #333; }
+.txt-dark { color: #222; }
 
 .txt-light { color: #d2d2d2; }
 
@@ -118,7 +118,7 @@ img { max-width: 100%; }
 
 #gradient { width: 100%; position: fixed; z-index: 1000; top: 0; left: 0; }
 
-body { padding-top: 10rem; padding-right: 5rem; background-color: #d2d2d2; color: #333; }
+body { padding-top: 10rem; padding-right: 5rem; background-color: #d2d2d2; color: #222; }
 
 body, div, p, ul, ol, li, a, blockquote, cite, button, input, textarea { font-family: "Bitter", serif; font-size: var(--body-font-size); }
 
@@ -140,7 +140,7 @@ h2 { font-size: calc(var(--heading-font-size) * 0.6); font-weight: normal; }
 
 h3 { font-size: calc(var(--heading-font-size) * 0.45); color: #1fc71f; }
 
-h4 { font-size: calc(var(--heading-font-size) * 0.33); color: #666666; }
+h4 { font-size: calc(var(--heading-font-size) * 0.33); color: #555555; }
 
 h5 { font-size: calc(var(--heading-font-size) * 0.25); text-transform: uppercase; }
 
@@ -148,13 +148,13 @@ ul, ol { margin-bottom: 1.5rem; list-style-position: inside; list-style-type: sq
 
 ul li, ol li { font-weight: 200; }
 
-pre, code { background-color: #1a1a1a; border-radius: 5px; }
+pre, code { background-color: #090909; border-radius: 5px; }
 
 pre { padding: 2.5rem; margin-bottom: 2rem; }
 
 code { color: whitesmoke; padding: 0.2rem 0.4rem; }
 
-blockquote { padding: 2rem; border-left: 1rem solid; border-color: #404040; }
+blockquote { padding: 2rem; border-left: 1rem solid; border-color: #2f2f2f; }
 
 blockquote p { text-indent: 2rem; position: relative; font-size: calc(var(--body-font-size) * 1.5); font-weight: 300; font-style: italic; margin-bottom: unset; }
 
@@ -186,7 +186,7 @@ nav a:last-of-type { margin-bottom: none; }
 
 .social-icon { display: inline; margin-right: 0.5rem; }
 
-.social-icon svg { width: 35px; fill: #333; }
+.social-icon svg { width: 35px; fill: #222; }
 
 .social-icon svg:hover { fill: #1fc71f; }
 
@@ -194,7 +194,7 @@ nav a:last-of-type { margin-bottom: none; }
 
 .burger { display: none; flex-direction: column; justify-content: space-between; position: fixed; top: 3rem; right: 1.5rem; width: 35px; height: 25px; background-color: unset; border: none; z-index: 1001; }
 
-.burger span { border-radius: 3px; background: #333; width: inherit; height: 3px; transition: 0.1s all; }
+.burger span { border-radius: 3px; background: #222; width: inherit; height: 3px; transition: 0.1s all; }
 
 .burger.open { justify-content: center; }
 
@@ -212,16 +212,16 @@ nav.mobile-menu .social-icon { display: none; }
 
 .push { transform: translateX(-400px); transition: 0.5s all; }
 
-a.btn { background-color: #333; color: #d2d2d2; padding: 0.8rem 1.5rem; font-size: 1.5rem; }
+a.btn { background-color: #222; color: #d2d2d2; padding: 0.8rem 1.5rem; font-size: 1.5rem; }
 
-a.btn:hover, a.btn:focus { background-color: #666666; }
+a.btn:hover, a.btn:focus { background-color: #555555; }
 
 .switch { opacity: 0; height: 0; width: 0; }
 
 .switch-toggle { position: fixed; bottom: 2rem; left: 2rem; width: 60px; height: 34px; }
 
 /* The slider */
-.switch-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #333; -webkit-transition: .4s; transition: .4s; border-radius: 34px; }
+.switch-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #222; -webkit-transition: .4s; transition: .4s; border-radius: 34px; }
 
 .switch-slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: #d2d2d2; -webkit-transition: .4s; transition: .4s; border-radius: 50%; }
 
@@ -241,7 +241,7 @@ a.btn:hover, a.btn:focus { background-color: #666666; }
 
 .post-publish span { display: block; line-height: 0.9; }
 
-.post-publish hr { background-color: #333; border: none; height: 5px; }
+.post-publish hr { background-color: #222; border: none; height: 5px; }
 
 .post-title { display: inline; font-size: 7rem; text-indent: 4rem; line-height: 1.3; }
 
@@ -286,6 +286,14 @@ a.btn:hover, a.btn:focus { background-color: #666666; }
 .portfolio-highlight-title::before { content: ""; position: absolute; right: 0; bottom: 0; width: 100%; max-width: 700px; height: 5px; background-color: #1fc71f; }
 
 .portfolio-highlight:nth-of-type(odd) .portfolio-highlight-title::before { right: unset; left: 0; }
+
+#contact .social-icon { display: inline-block; margin-right: 0.5rem; }
+
+#contact .social-icon svg { width: 100px; fill: #222; }
+
+#contact .social-icon svg:hover { fill: #1fc71f; }
+
+#contact .social-icon:focus svg { fill: #1fc71f; }
 
 @media (min-width: 1024px) and (max-width: 1440px) { :root { --body-font-size: 1.5rem; --heading-font-size: 6rem; } .nav-brand { font-size: 2rem; } .portfolio-thumb { height: 300px; } .portfolio-hero-image { height: 450px; } blockquote p { font-size: calc(var(--body-font-size) * 1.2); } blockquote p::before { font-size: 2.5rem; } .portfolio-highlight-title::before { max-width: 500px; } .portfolio-overview { padding: 1rem; } .portfolio-container { height: 420px; } }
 

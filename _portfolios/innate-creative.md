@@ -8,7 +8,7 @@ client_url: 'https://innatecreative.co'
 stack: Jekyll/Sass
 preview_image: /assets/images/gus-2020.jpg
 hero_image: /assets/images/gus-profile.jpg
-testimonial_text: Our business model was only possible due to the solutions implemented by Gus.
+testimonial_text_html: Our business model was only possible due to the solutions implemented by Gus.
 testimonial_author: Jasmine, co-founder/owner
 portfolio_highlights:
   - title: Sassy theme

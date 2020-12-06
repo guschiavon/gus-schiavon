@@ -6,7 +6,7 @@ title:
 short_description: 
 client_url:
 stack:
-testimonial_text:
+testimonial_text_html:
 testimonial_author:
 preview_image: 
 hero_image:

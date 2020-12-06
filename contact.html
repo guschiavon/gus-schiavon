@@ -1,4 +1,19 @@
 ---
 layout: default
 title: contact
+contact_channels:
+  - label: WhatsApp
+    link: 'https://wa.me/+6281326617660'
+  - label: Email
+    link: 'mailto:hello@itsgus.dev'
+  - label: Messenger
+    link: 'https://m.me/gschiavon'
 ---
+<main class="col-9_sm-12">
+  <section id="contact" class="px-lg">
+    <h2>You can reach me on:</h2>
+    {% for channel in page.contact_channels %}
+    <h4>{{channel.label}}</h4><a href="{{channel.link}}" class="social-icon" rel="noopener noreferrer" target="_blank">{%include social-icons.html icon=channel.label %}</a>
+    {% endfor %}
+  </section>
+</main>
