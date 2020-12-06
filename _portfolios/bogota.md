@@ -19,4 +19,5 @@ portfolio_highlights:
       <p>Speaking of responsive, the site's content and interactions adapt to multiple screen sizes, from extra small devices to large monitors. Oh, and did I mention it is cross-browser compatible?</p>
     image: /assets/images/gus-2020.jpg  
 ---
-The [Bogotá](https://somosbogota.tv){:target="_blank"} team approached me for developing their new website to represent their new visual identity.
+
+The [Bogot&aacute;](https://somosbogota.tv){: target="_blank"} team approached me for developing their new website and help represent their new visual identity. Being an agency focused on animation, illustration and motion graphics, they wanted to add dynamic elements that responded to scrolling events. With the design provided by the Bogot&aacute; team, we have polished the site to feature multiple reactive sections leveraging the [GSAP](https://greensock.com){: target="_blank" rel="noreferrer noopener"} library. As a portfolio website for both Bogot&aacute; and myself, stay tuned for continuous updates and new features...
