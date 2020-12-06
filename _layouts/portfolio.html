@@ -23,7 +23,10 @@ layout: default
     </div>
     <div class="col-5_md-6_sm-12-middle {% cycle '', 'right' %}">
       <div class="portfolio-highlight-content">
-        <h4 class="portfolio-highlight-title mb-1">{{highlight.title}}</h4>
+        <h4 class="portfolio-highlight-title mb-1">
+          {{highlight.title}}
+          <hr id="portfolio-highlight-title-underline" class="portfolio-highlight-title-underline">
+        </h4>
         <div class="txt-small">
           {{highlight.text_content_html}}
         </div>

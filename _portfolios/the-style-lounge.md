@@ -14,11 +14,11 @@ portfolio_highlights:
   - title: Shopify Integration
     text_content_html: >-
       <p>A custom Jekyll frontend and integration with Shopify store so Hannah and The Style Lounge team can manage both content and inventory with ease</p>
-    image: /assets/images/gus-2020.jpg  
+    image: /assets/images/shopify-logo.jpg  
   - title: Animation Library
     text_content_html: >-
       <p>Leveraging the <a href="https://michalsnik.github.io/aos/" rel="noopener noreferrer" arial-label="link to animate on scroll library">Animate On Scroll library</a>, we have added some dynamism to the page through scroll animations.</p>
-    image: /assets/images/gus-2020.jpg  
+    image: /assets/images/stylelounge.jpg  
   - title: Handy Widgets
     text_content_html: >-
       <p>The Style Lounge wanted to add Instagram feed, Live Chat and Pop-up banners across the site. We've teamed-up with <a href="https://elfsight.com">Elfsight</a> for easy and intuitive integration of these widgets.</p>

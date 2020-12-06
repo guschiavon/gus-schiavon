@@ -59,6 +59,7 @@ const divider = document.getElementById("divider");
 const headerGradient = document.getElementById("gradient");
 const headerContent = document.getElementById("title-section");
 const greenify = document.getElementsByClassName("greenify")
+const greenLine = document.getElementsByClassName('portfolio-highlight-title-underline')
 
 const portfolioTl = gsap.timeline({
   scrollTrigger: {
@@ -66,13 +67,13 @@ const portfolioTl = gsap.timeline({
     trigger: ".portfolio-highlight",
     start: "top center",
     end: "bottom center",
-    scrub: 1
-  }
-})
-const greenLine = CSSRulePlugin.getRule(".portfolio-highlight-title::before")
+    scrub: 1,
+  },
+});
+// const greenLine = CSSRulePlugin.getRule(".portfolio-highlight-title::before")
 
 portfolioTl.to(greenLine, {
-  width: "200%"
+  width: "200%",
 })
 
 const navbar = document.getElementById('sticky-nav')

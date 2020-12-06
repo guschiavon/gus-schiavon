@@ -76,19 +76,30 @@
 .portfolio-highlight-title {
   position: relative;
   display: inline-block;
-  &::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    max-width: 700px;
-    height: 5px;
-    background-color: $accent-color;
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   right: 0;
+  //   bottom: 0;
+  //   width: 100%;
+  //   max-width: 700px;
+  //   height: 5px;
+  //   background-color: $accent-color;
+  // }
+}
+.portfolio-highlight-title-underline {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  width: inherit;
+  max-width: 700px;
+  background-color: $accent-color;
+  border: none;
 }
 .portfolio-highlight:nth-of-type(odd) {
-  .portfolio-highlight-title::before {
+  .portfolio-highlight-title-underline {
     right: unset;
     left: 0; 
   }

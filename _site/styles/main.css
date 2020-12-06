@@ -283,9 +283,9 @@ a.btn:hover, a.btn:focus { background-color: #555555; }
 
 .portfolio-highlight-title { position: relative; display: inline-block; }
 
-.portfolio-highlight-title::before { content: ""; position: absolute; right: 0; bottom: 0; width: 100%; max-width: 700px; height: 5px; background-color: #1fc71f; }
+.portfolio-highlight-title-underline { display: block; position: absolute; right: 0; bottom: 0; height: 5px; width: inherit; max-width: 700px; background-color: #1fc71f; border: none; }
 
-.portfolio-highlight:nth-of-type(odd) .portfolio-highlight-title::before { right: unset; left: 0; }
+.portfolio-highlight:nth-of-type(odd) .portfolio-highlight-title-underline { right: unset; left: 0; }
 
 #contact .social-icon { display: inline-block; margin-right: 0.5rem; }
 
