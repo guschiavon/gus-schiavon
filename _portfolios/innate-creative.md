@@ -1,9 +1,10 @@
 ---
 layout: portfolio
-index: 4
+index: 1
 categories: website
 title: Innate Creative
 short_description: Reusable templates with multiple sections for DIY deployment optimized for CloudCannon CMS 
+client_url: 'https://innatecreative.co'
 stack: Jekyll/Sass
 preview_image: /assets/images/gus-2020.jpg
 hero_image: /assets/images/gus-profile.jpg
@@ -19,6 +20,4 @@ portfolio_highlights:
       <p>Multiple image versions & sizes are generated upon upload by leveraging the Jekyll gem library, resulting in superb responsivity for the site's content.</p>
     image: /assets/images/gus-2020.jpg  
 ---
-### The brief:
-
 The [Bogotá](https://somosbogota.tv){:target="_blank"} team approached me for developing their new website to represent their new visual identity.

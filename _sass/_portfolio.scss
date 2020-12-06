@@ -79,7 +79,7 @@
   &::before {
     content: "";
     position: absolute;
-    left: 0;
+    right: 0;
     bottom: 0;
     width: 100%;
     max-width: 700px;
@@ -89,7 +89,7 @@
 }
 .portfolio-highlight:nth-of-type(odd) {
   .portfolio-highlight-title::before {
-    right: 0;
-    left: unset; 
+    right: unset;
+    left: 0; 
   }
 }
