@@ -8,7 +8,7 @@ client_url: 'https://thestyleloungelichfield.com'
 stack: Jekyll/Shopify
 preview_image: /assets/images/gus-schiavon-hair-salon-website.jpg
 hero_image: /assets/images/thestylelounge.jpg
-testimonial: We have made the right decision to migrate from WordPress to our new, beautiful static Jekyll site and integrated Shopify store. Thanks Gus for your help!
+testimonial_text: We have made the right decision to migrate from WordPress to our new, beautiful static Jekyll site and integrated Shopify store. Thanks Gus for your help!
 testimonial_author: Hannah, owner
 portfolio_highlights:
   - title: Shopify Integration

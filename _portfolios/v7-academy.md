@@ -8,7 +8,7 @@ client_url: 'https://v7academy.com'
 stack: Jekyll/Sass/LMS
 preview_image: /assets/images/canyoning-v7-academy-015.jpg
 hero_image: /assets/images/canyoning-v7-academy-016.jpg
-testimonial: Gus did an amazing job in creating a responsive and beautiful site for our organisation
+testimonial_text: Gus did an amazing job in creating a responsive and beautiful site for our organisation
 testimonial_author: Panos, Co-founder
 portfolio_highlights:
   - title: SEO performance
