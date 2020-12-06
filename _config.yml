@@ -13,6 +13,7 @@ collections:
   portfolios:
     output: true
     permalink: /:categories/:title
+    
 
 uploads_dir: assets/images
 
