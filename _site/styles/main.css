@@ -122,11 +122,11 @@ body { padding-top: 10rem; padding-right: 5rem; background-color: #d2d2d2; color
 
 body, div, p, ul, ol, li, a, blockquote, cite, button, input, textarea { font-family: "Bitter", serif; font-size: var(--body-font-size); }
 
-p { line-height: 1.5; margin-bottom: 1.5rem; }
+p, li { line-height: 1.5; margin-bottom: 1.5rem; }
 
-p:last-child { margin-bottom: none; }
+p:last-child, li:last-child { margin-bottom: none; }
 
-p a { font-size: inherit; }
+p a, li a { font-size: inherit; }
 
 h1, h2, h3, h4, h5, label { font-family: "Glegoo", serif; }
 
@@ -150,9 +150,9 @@ ul li, ol li { font-weight: 200; }
 
 pre, code { background-color: #090909; border-radius: 5px; }
 
-pre { padding: 2.5rem; margin-bottom: 2rem; }
+pre { padding: 2.5rem; margin-bottom: 2rem; overflow-x: scroll; }
 
-code { color: whitesmoke; padding: 0.2rem 0.4rem; }
+code { color: whitesmoke; font-size: 1.3rem; padding: 0.2rem 0.4rem; }
 
 blockquote { padding: 2rem; border-left: 1rem solid; border-color: #2f2f2f; }
 

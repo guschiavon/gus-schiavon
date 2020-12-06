@@ -1,6 +1,6 @@
 ---
 layout: portfolio
-index: 3
+index: 1
 categories: website
 title: The Style Lounge
 short_description: A modern hair salon site built with Jekyll and featuring an integrated Shopify store

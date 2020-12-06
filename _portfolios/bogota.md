@@ -1,6 +1,6 @@
 ---
 layout: portfolio
-index: 2
+index: 3
 categories: website
 title: Bogotá
 short_description: A showcase website with scroll animations for the media agency

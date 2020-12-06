@@ -1,6 +1,6 @@
 ---
 layout: portfolio
-index: 1
+index: 4
 categories: website
 title: 'V7 Academy'
 short_description: A landing page for an online canyoning training organisation, integrated with LearnWorlds LMS

@@ -1,0 +1,169 @@
+I"�(<h2 id="using-jekyll-responsive-image-with-lazysizes">Using jekyll-responsive-image with lazysizes</h2>
+
+<h3 id="overview">Overview</h3>
+
+<p>Web optimized images (that is, in various sizes and compression) and lazy loading images are our friends when it comes to page load speed. This “dynamic duo” is a powerful ally to crush the score at Google’s PageSpeed. Providing images in a <code class="language-plaintext highlighter-rouge">srcset</code> attribute allows the browser to choose which resolution to load according to various screen sizes and even resolution (pixel density), and telling the browser <strong>when</strong> to load them will also support faster loading times, as some images will load after the initial styles are rendered by the browser or better, not at all depending on user scroll behaviour, which saves bandwidth and makes page loading less expensive of a task.</p>
+
+<p>Optimizing images for web is a time-consuming task. Resizing, optimizing and organizing them can take a great deal of effort when all we want to do is code. This implementation aims at <strong>automating the process of image optimization and link it to lazy loading image capabilities for optimal performance</strong>.</p>
+
+<p>For this we’re going to use <code class="language-plaintext highlighter-rouge">jekyll-responsive-image</code> plugin by <a href="https://github.com/wildlyinaccurate" target="_blank" rel="noreferrer">Joseph Wynn</a> (Github: wildlyinaccurate) together with <a href="https://github.com/aFarkas/" target="_blank" rel="noreferrer">Alexander Farkas</a> <code class="language-plaintext highlighter-rouge">lazysizes</code> (Github: aFarkas) to render lazy loading and responsive images with Jekyll.</p>
+
+<h3 id="setup">Setup:</h3>
+
+<p>We need to install the following dependencies &amp; plugin:</p>
+
+<h4 id="rmagick">rmagick</h4>
+
+<p>This is required to generate the different image sizes automatically.</p>
+<ul>
+  <li>Run <code class="language-plaintext highlighter-rouge">brew install imagemagick</code> on MacOS or follow the <a href="https://github.com/rmagick/rmagick">Rmagick installation documentation</a></li>
+  <li>Add <code class="language-plaintext highlighter-rouge">gem 'rmagick'</code> to our <code class="language-plaintext highlighter-rouge">Gemfile</code></li>
+  <li>Run <code class="language-plaintext highlighter-rouge">bundle install</code> on Terminal</li>
+</ul>
+
+<h4 id="lazysizes">lazysizes</h4>
+
+<ul>
+  <li>Head to <a href="https://github.com/aFarkas/lazysizes">lazysizes</a> to download the script. Copy the code and paste it in a file called <code class="language-plaintext highlighter-rouge">lazysizes.min.js</code> and save it in the appropriate folder (i.e. <code class="language-plaintext highlighter-rouge">/js</code>).</li>
+  <li>Let’s add <code class="language-plaintext highlighter-rouge">&lt;script src="/js/lazysizes.min.js" async=""&gt;&lt;/script&gt;</code> to our markup (i.e. end of <code class="language-plaintext highlighter-rouge">body</code> tag)</li>
+  <li>That’s it for now!</li>
+</ul>
+
+<h4 id="jekyll-responsive-image">jekyll-responsive-image</h4>
+
+<ul>
+  <li>Install <a href="https://github.com/wildlyinaccurate/jekyll-responsive-image">jekyll-responsive-image</a> in project by adding <code class="language-plaintext highlighter-rouge">gem ‘jekyll-responsive-image’</code> to the Gemfile and running <code class="language-plaintext highlighter-rouge">bundle install</code></li>
+  <li>In our <code class="language-plaintext highlighter-rouge">_config.yml</code> file, we should add the following:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>plugins:
+  - jekyll-responsive-image
+</code></pre></div></div>
+
+<ul>
+  <li>Inside the <code class="language-plaintext highlighter-rouge">_includes</code> folder, we will create a base image template file, name it <code class="language-plaintext highlighter-rouge">dynamic-image.html</code> or <em>anything we want</em>. The file should contain a basic code like this (we can adjust this template to your needs):</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{% capture srcset %}
+    {% for i in resized %}
+        /{{ i.path }} {{ i.width }}w,
+    {% endfor %}
+{% endcapture %}
+
+
+
+&lt;img data-src="/" alt="" data-srcset="" class="lazyload"&gt;
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">data-src</code> will pull the <code class="language-plaintext highlighter-rouge">jekyll-responsive-image</code> generated images into the tag and make it available to <code class="language-plaintext highlighter-rouge">lazysizes</code> for lazy loading!</p>
+
+<p><em>Note 1: we can define any class we want in the <code class="language-plaintext highlighter-rouge">class</code> attribute but it *is compulsory to put class <code class="language-plaintext highlighter-rouge">lazyload</code> for lazysizes to work* in conjunction with jekyll-responsive-image</em></p>
+
+<p><em>Note 2: we can play around with the template and create multiple versions to suit our needs (more on that later).</em></p>
+
+<h4 id="configuration">Configuration</h4>
+
+<ul>
+  <li>Let’s configure the plugin by adding the following code to our <code class="language-plaintext highlighter-rouge">_config.yml</code> file:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>responsive_image:
+  template: _includes/dynamic-image.html # the name of the template file should match the created template
+  base_path: assets # update this to match the path to your image folder (default: assets)
+  output_path_format: assets/srcset/%{width}/%{basename} # the destination path for the resized images; configure to suit your project structure
+</code></pre></div></div>
+
+<ul>
+  <li>There’s a variety of configurations for the plugin (check the <a href="https://github.com/wildlyinaccurate/jekyll-responsive-image">documentation</a>) but <em>one to have particularly handy is the <code class="language-plaintext highlighter-rouge">sizes</code> configuration</em>, which tells the plugin what image size versions to generate for the <code class="language-plaintext highlighter-rouge">srcset</code>. Our <code class="language-plaintext highlighter-rouge">_config.yml</code> will look like this:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>responsive_image:
+   template: _includes/dynamic-image.html
+   base_path: assets
+   sizes:
+    - width: 480  # [Required] How wide the resized image will be.
+      quality: 80 # [Optional] Overrides default_quality for this size. The default is 90
+    - width: 800
+    - width: 1400
+      quality: 90
+</code></pre></div></div>
+
+<ul>
+  <li>Let’s save it and reload Jekyll</li>
+</ul>
+
+<h3 id="implementation">Implementation</h3>
+
+<p>Now, in place of any <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tags, we should instead use any of the following structures:</p>
+
+<p>For a simple static image:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% responsive_image path: assets/my-file.jpg %}
+</code></pre></div></div>
+
+<p>Or for more attributes like adding <code class="language-plaintext highlighter-rouge">alt</code> or <code class="language-plaintext highlighter-rouge">title</code> to an image, we follow this syntax:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% responsive_image path: assets/image.jpg alt: "Lorem ipsum..." title: "Lorem ipsum..." %}
+</code></pre></div></div>
+
+<p>Or for greater versatility of use, we can play with Liquid attributes, conditional logic and pull values from frontmatter like so:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+image: /assets/placeholder-1.jpg
+image-alt: Chill, it's just a placeholder...
+---
+
+{% assign path = page.image %}
+{% assign alt = page.image-alt %}
+
+{% responsive_image_block %}
+  path: {{ path }}
+  alt: {{ alt }}
+{% if title %}
+  title: {{ title }}
+  {% endif %}
+{% endresponsive_image_block %}
+
+</code></pre></div></div>
+
+<p>To which the output will be:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;img data-src="/assets/placeholder-1.jpg" alt="Chill, it's just a placeholder"
+     data-srcset=" /assets/srcset/480/placeholder-1.jpg 480w,
+                   /assets/srcset/800/placeholder-1.jpg 800w,
+                   /assets/srcset/1400/placeholder-1.jpg 1400w,"
+                   class="lazyload"&gt;
+</code></pre></div></div>
+
+<p>Where the image’s size is relative to the <code class="language-plaintext highlighter-rouge">sizes</code> declared on the <code class="language-plaintext highlighter-rouge">_config.yml</code> and the <code class="language-plaintext highlighter-rouge">width</code> is relative to the viewport width. We can fiddle with the template to render images related to the pixel density and all sorts of things…
+<em>IMPORTANT:</em> Data inside the <code class="language-plaintext highlighter-rouge">responsive_image_block</code> follows YAML syntax, so indentation is important!</p>
+
+<ul>
+  <li>As for multiple <code class="language-plaintext highlighter-rouge">responsive_image_block</code> templates, we can override the default from the <code class="language-plaintext highlighter-rouge">_config.yml</code> by declaring the template to be used, like so:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+image: /assets/placeholder-1.jpg
+image-alt: Chill, it's just a placeholder...
+---
+
+{% assign path = page.image %}
+{% assign alt = page.image-alt %}
+
+{% responsive_image_block %}
+  template: another-img-template.html # Add the template override reference here
+  path: {{ path }}
+  alt: {{ alt }}
+{% if title %}
+  title: {{ title }}
+  {% endif %}
+{% endresponsive_image_block %}
+
+
+</code></pre></div></div>
+
+<h3 id="troubleshooting--comments">Troubleshooting &amp; Comments</h3>
+<p>Got a better way of mixing these two? Think we can make it even better? There are some more improvements to be had, but that’s subject to another post!</p>
+
+:ET
