@@ -19,3 +19,4 @@ portfolio_highlights:
     image: /assets/images/gus-2020-canyon.jpg
 ---
 
+Lorem here
