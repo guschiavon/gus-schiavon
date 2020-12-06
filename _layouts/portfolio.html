@@ -8,13 +8,14 @@ layout: default
   </div>
   <hr class="divider-lg mb-2">
   <div class="portfolio-hero-image mb-2">
-    <img src="{{page.hero_image}}" alt="">
+    <img src="{{page.hero_image}}" alt="" class="responsive-image">
   </div>
+  <h3>Briefing:</h3>
   <p>{{content}}</p>
   {% for highlight in page.portfolio_highlights %}
   <div class="grid-noGutter-spaceBetween{% cycle ' ', '-reverse' %} portfolio-highlight">
     <div class="col-5_md-6_sm-12-middle portfolio-thumb">
-      <img src="{{highlight.image}}" alt="">
+      <img src="{{highlight.image}}" alt="" class="responsive-image">
     </div>
     <div class="col-5_md-6_sm-12-middle {% cycle ' ', 'right' %}">
       <div class="portfolio-highlight-content">

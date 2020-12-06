@@ -19,6 +19,4 @@ portfolio_highlights:
       <p>Speaking of responsive, the site's content and interactions adapt to multiple screen sizes, from extra small devices to large monitors. Oh, and did I mention it is cross-browser compatible?</p>
     image: /assets/images/gus-2020.jpg  
 ---
-### The brief:
-
 The [Bogotá](https://somosbogota.tv){:target="_blank"} team approached me for developing their new website to represent their new visual identity.

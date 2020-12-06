@@ -6,18 +6,18 @@ title: V7 Academy
 site_url: 'http://v7academy.com'
 short_description: A landing page for an online canyoning training organisation, integrated with LearnWorlds LMS
 stack: Jekyll/Sass/LMS
-preview_image: /assets/images/gus.jpg
-hero_image:
+preview_image: /assets/images/canyoning-v7-academy-015.jpg
+hero_image: /assets/images/canyoning-v7-academy-016.jpg
 testimonial: Gus did an amazing job in creating a responsive and beautiful site for our organisation
 testimonial_author: Panos, Co-founder
 portfolio_highlights:
-  - title: Sassy theme
+  - title: LMS integration
     text_content_html: >-
-      <p>By using Sass variables and integrating with a global settings file, the client is able to change the theme styles (fonts, colors, navigation, and more) through the <a href="https://cloudcannon.com">CloudCannon CMS</a> interface.</p>
-    image: /assets/images/gus-2020.jpg  
-  - title: Responsive images
+      <p>We have integrated the static landing page with <a href="https://learnworlds.com" target="_blank" rel="noopener noreferrer">LearnWorlds</a> to create an online canyoning school. Visual identity is preserved for better user experience.</p>
+    image: /assets/images/gus-schiavon-v7-academy-website.jpg  
+  - title: SEO performance
     text_content_html: >-
-      <p>Multiple image versions & sizes are generated upon upload by leveraging the Jekyll gem library, resulting in superb responsivity for the site's content.</p>
+      <p>The optimised architechture uses spiced-up <strong>SEO best-practices</strong> coupled with <strong>keyword-rich content</strong> in the integrated blog results in high rankings on search engine queries for the target keywords within a super short time.</p>
     image: /assets/images/gus-2020.jpg  
 ---
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat fuga aut obcaecati esse dignissimos autem accusamus totam molestias recusandae. Possimus et hic qui accusantium cumque, error culpa blanditiis rerum assumenda ab sit maxime dolores in officiis voluptatem asperiores, non eligendi.
+As a co-founder of [V7 Academy](https://v7academy.com){:target="_blank"}{:rel="noopener noreferrer"}, an online canyoning training course organisation, I was assigned the role to **develop the visual identity and web resources** for the business. The "V7" in the name represents the hardest, most technical level of an international canyoning rating system, and the website should represent this too. We have worked on a static site with **multiple layouts** to showcase the courses and levels, and linked the Sign-up/Sign-in actions directly with the LearnWorlds platform. The goal for the website was simple: to take over the canyoning training courses search term and turn V7 Academy into the reference for modern canyoning learning. The [V7 Basecamp blog](https://v7academy.com/basecamp){:target="_blank}{:rel="noopener noreferrer"} combines the speed of Jekyll static sites with responsive image generation, and with dedicated, optimized content we have achieved high-speed-performance and excellent SEO results: **every blog page organically ranks as #1 on Google searches** for its keyword/keyphrase searches.
