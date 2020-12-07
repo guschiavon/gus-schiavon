@@ -4,7 +4,7 @@ general_settings:
   preview_image:
   social:
     - icon: "LinkedIn"
-      url: 'https://linkedin.com/in/gus.schiavon'
+      url: 'https://linkedin.com/in/gus-schiavon'
     - icon: "Github"
       url: 'https://github.com/guschiavon'
 theme:

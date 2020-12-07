@@ -159,3 +159,63 @@ ScrollTrigger.matchMedia({
     }, 
 })
 
+//  particles
+
+function random(min, max) {
+  return Math.floor(Math.random() * (1 + max - min) + min);
+}
+
+const container = document.getElementById('particles-container');
+let html = "";
+const count = 100;
+let w = window.innerWidth;
+let h = window.innerHeight;
+
+const tl = gsap.timeline({
+  repeat: -1
+});
+const tl2 = gsap.timeline({
+  repeat: -1,
+  // repeatDelay: 1
+});
+
+for (let i = 0; i < count; i++) {
+  html += "<div></div>";
+}
+container.innerHTML = html;
+
+const dots = document.querySelectorAll("#particles-container > div");
+
+for (let d = 0; d < dots.length; d++) {
+  tl.add(
+    gsap.fromTo(
+      dots[d],
+      {
+        x: random(-(w * 0.4), w * 0.4),
+        y: random(-(h * 0.4), h * 0.4),
+        z: random(-300, 0),
+        opacity: random(1, 4) / 10,
+      },
+      {
+        x: "+=" + random(-(w * 0.4), w * 0.4),
+        y: "+=" + random(-(h * 0.4), h * 0.4),
+        z: "+=" + random(-200, 200),
+        repeat: 1,
+        yoyo: true,
+        ease: "sine.inOut",
+        duration: 3,
+      }
+    ),
+    0
+  );
+}
+tl2.fromTo(container, {
+  perspective: 20
+}, {
+  perspective: 700,
+  repeat: 1,
+  repeatDelay: 2,
+  yoyo: true,
+  ease: "sine.inOut",
+  duration: 3
+});
