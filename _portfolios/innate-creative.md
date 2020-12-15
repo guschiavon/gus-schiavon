@@ -8,7 +8,7 @@ client_url: 'https://innatecreative.co'
 stack: Jekyll/Sass
 preview_image: /assets/images/innate-creative.jpg
 hero_image: /assets/images/innate-creative.jpg
-testimonial_text_html: Here's a quote from the owner of the business.
+testimonial_text_html: We gave Gus our idea and strategy on what we wanted to create, and he came up with something even better than we could have expected. Our business model is only now possible since Gus has produced our website templates. I get that working with a web dev could be daunting if you don't speak 'code' but Gus made the process so simple, easy to follow and made sure we were aware of what was going on at every step of the process.
 testimonial_author: Jasmine, co-founder/owner
 portfolio_highlights:
   - title: Sassy theme

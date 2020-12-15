@@ -53,7 +53,7 @@ burger.addEventListener('click', function(){
 
 
 // GSAP animations
-gsap.registerPlugin(ScrollTrigger, CSSRulePlugin, MotionPathPlugin)
+gsap.registerPlugin(ScrollTrigger, CSSRulePlugin, MotionPathPlugin, TextPlugin)
 
 const divider = document.getElementById("divider");
 const headerGradient = document.getElementById("gradient");
@@ -71,15 +71,14 @@ const portfolioTl = gsap.timeline({
     scrub: 1,
   },
 });
-// const greenLine = CSSRulePlugin.getRule(".portfolio-highlight-title::before")
-
+// Animates the green underline on the Portfolio layout
 portfolioTl.to(greenLine, {
   width: "200%",
 })
 .to(frame, {
   transform: "scale(1.06)"
 })
-
+// Animates the navbar logo and the green bar position (to fix)
 const navbar = document.getElementById('sticky-nav')
 
 ScrollTrigger.matchMedia({
@@ -158,6 +157,8 @@ ScrollTrigger.matchMedia({
       })
     }, 
 })
+
+
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 particlesJS.load('particles-js', '/js/particlesjs-config.json', function() {
   console.log('callback - particles.js config loaded');

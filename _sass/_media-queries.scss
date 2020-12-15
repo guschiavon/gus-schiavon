@@ -89,7 +89,7 @@
     padding: 0.3rem;
   }
 }
-@media (min-width: 320px) and (max-width: 768px) {
+@media (min-width: 280px) and (max-width: 768px) {
   :root {
     --body-font-size: 1.4rem;
     --heading-font-size: 3rem;
@@ -109,7 +109,7 @@
     display: none;
     opacity: 0;
     a {
-      font-size: 1.2rem;
+      font-size: 1.6rem;
     }
   }
   .nav-brand {
@@ -121,7 +121,7 @@
     display: flex;
   }
   .post-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     display: inline-block;
     text-indent: 0;
     line-height: 1;
@@ -140,9 +140,21 @@
     margin-top: 1rem;
     font-size: 0.8rem;
   }
-  .home h1,
-  .home h2 {
-  
+}
+@media (min-width: 280px) and (max-width: 360px) {
+  .post-title {
+    font-size: calc(var(--heading-font-size) * 0.75);
+  }
+  .post-preview {
+    font-size: calc(var(--body-font-size) * 0.80);
+  }
+  nav a {
+    font-size: 1rem;
+    margin-bottom: unset;
+    margin-top: 0.3rem;
+  }
+  .burger {
+    width: 30px;
   }
 }
 @media (min-width: 320px) and (max-width: 1023px) {
