@@ -15,6 +15,9 @@ tags:
 ---
 ## Responsive Gallery with Vanilla JavaScript (ES6)
 
+Check this pen for a working example of what we are building:
+[Vanilla JS Codepen](https://codepen.io/gschiavon/pen/qBaGyzJ){:target="_blank"}{:rel="noopener noreferrer"}
+
 ### Overview
 
 Nowadays it's so easy to make use of existing tools and pre-written code to add features to our projects. The issue with these is the chance of conflicts and issues when it comes to implementations using code written by multiple collectives or individuals. In this post we will cover the step-by-step process to create a **responsive image gallery using vanilla JavaScript** and Jekyll SSG which is simple enough and gives us some good insights on how JS works on the browser.
