@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Responsive Gallery with Vanilla JavaScript [ES6]
+preview_image: /assets/images/js-gallery-cover.jpg
 subtitle: A slim & responsive gallery for use with Jekyll 
 short_description: In this post we will create a responsive gallery using vanilla JavaScript and loop through an array of images using Jekyll
 categories:
