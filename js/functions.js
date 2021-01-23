@@ -77,27 +77,28 @@ portfolioTl.to(greenLine, {
 })
 .to(frame, {
   transform: "scale(1.06)"
-})
+}, '>')
 // Animates the navbar logo and the green bar position (to fix)
 const navbar = document.getElementById('sticky-nav')
 
 ScrollTrigger.matchMedia({
-  "(max-width: 676px)": function() {
-    let headerTl = gsap
-      .timeline({
-        scrollTrigger: {
-          duration: 0.7,
-          trigger: divider,
-          start: "top 30%",
-          end: "bottom 23%",
-          toggleActions: "play none none reverse",
-          scrub: true,
-        },
-      })
-      .to(headerContent, {
-        opacity: 0,
-      })  
-  },
+  // "(max-width: 676px)": function() {
+  //   let headerTl = gsap
+  //     .timeline({
+  //       scrollTrigger: {
+  //         markers: true,
+  //         duration: 0.7,
+  //         trigger: divider,
+  //         start: "top 30%",
+  //         end: "bottom 30%",
+  //         toggleActions: "play none none reverse",
+  //         scrub: true,
+  //       },
+  //     })
+  //     .to(headerContent, {
+  //       opacity: 0,
+  //     })  
+  // },
 
   "(max-width: 768px)": function() {
     
@@ -131,7 +132,7 @@ ScrollTrigger.matchMedia({
         opacity: 0,
       })
       .to(headerGradient, {
-        height: "100",
+        height: "180",
         backgroundImage: "linear-gradient(#111 30%, #333 66%, #0000 100%)",
       })
       .to(greenify, {

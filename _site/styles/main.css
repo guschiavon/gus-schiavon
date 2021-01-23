@@ -196,7 +196,7 @@ nav a:last-of-type { margin-bottom: none; }
 
 .social-icon:focus svg { fill: #1fc71f; }
 
-.burger { display: none; flex-direction: column; justify-content: space-between; position: fixed; top: 3rem; right: 1.5rem; width: 35px; height: 25px; background-color: unset; border: none; z-index: 1001; }
+.burger { display: none; flex-direction: column; justify-content: space-between; position: fixed; top: 3rem; right: 1.5rem; width: 35px; height: 25px; background-color: unset; border: none; z-index: 10001; }
 
 .burger span { border-radius: 3px; background: #222; width: inherit; height: 3px; transition: 0.1s all; }
 
