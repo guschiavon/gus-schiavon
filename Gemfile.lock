@@ -70,6 +70,7 @@ DEPENDENCIES
   jekyll-archives (= 2.2.1)
   jekyll-sitemap
   jekyll-webp (= 1.0.0)
+  rouge
 
 BUNDLED WITH
    2.1.4
