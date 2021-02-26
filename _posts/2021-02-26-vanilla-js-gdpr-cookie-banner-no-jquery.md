@@ -34,10 +34,41 @@ The cookie banner HTML structure is pretty straight forward: a fixed banner (or 
 
 ```
 
-{% raw %}<br>&lt;section id="cookies-banner" class="cookies-banner bg-dark px-lg"&gt;<br>&nbsp; &lt;h4&gt;We use cookies in this page&lt;/h4&gt;<br>&nbsp; &lt;p class="editable txt-small"&gt;Explain here what are cookies and all&lt;/p&gt;<br>&nbsp; &lt;button id="cookie-consent" class="btn txt-small" tabindex="1"&gt;<br>&nbsp; &nbsp; Accept All Cookies<br>&nbsp; &lt;/button&gt;<br>&nbsp; &lt;button id="cookie-preferences" class="btn-outline–light txt-small" tabindex="1"&gt;<br>&nbsp; &nbsp; Settings &nbsp; &nbsp;<br>&nbsp; &lt;/button&gt;<br>&nbsp; &lt;div id="cookie-preferences–menu" class="hide"&gt;<br>&nbsp; &nbsp; &lt;p class="txt-small"&gt;Choose which cookies you want to allow and click "Save & Close" to save your preferences&lt;/p&gt;<br>&nbsp; &nbsp; &lt;p class="txt-bold txt-small"&gt;Allow cookies:&lt;/p&gt;<br>&nbsp; &nbsp; &lt;input type="checkbox" name="Strictly Necessary" id="strictly-necessary" checked&gt;<br>&nbsp; &nbsp; &lt;label for="strictly-necessary" class="txt-small"&gt;Strictly Necessary&lt;/label&gt;<br>&nbsp; &nbsp; &lt;input type="checkbox" name="Analytics" id="analytics"&gt;<br>&nbsp; &nbsp; &lt;label for="analytics" class="txt-small"&gt;Analytics&lt;/label&gt;<br>&nbsp; &nbsp; &lt;input type="checkbox" name="Marketing" id="marketing"&gt;<br>&nbsp; &nbsp; &lt;label for="analytics" class="txt-small"&gt;Marketing&lt;/label&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;<br>&lt;button id="cookie-prefs" class="cookie-prefs flex-center" aria-label="open cookie preferences"&gt;<br>&nbsp; &lt;img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows\_Settings\_app\_icon.png" alt=""&gt;<br>&lt;/button&gt;<br>&lt;div id="scripts"&gt;&lt;/div&gt;
-
+{% raw %}
+<section class="overview">
+  <h1>Set Session Cookie Preferences</h1>
+  <p>A GDPR-EU compliant, Vanilla JS solution to add cookies according to user preferences.</p>
+  <ol>
+   <li>Cookie preferences are stored in the sessionStorage of the client; you can access this information under the Application tab of the Dev Tools.</li>
+  <li>Open Dev Tools and find the '#scripts' tag to see the script in action.</li>
+    <li>Style it to your liking...</li>
+  </ol>
+</section>
+<section id="cookies-banner" class="cookies-banner bg-dark px-lg">
+  <h4>We use cookies in this page</h4>
+  <p class="editable txt-small">Explain here what are cookies and all</p>
+  <button id="cookie-consent" class="btn txt-small" tabindex="1">
+    Accept All Cookies
+  </button>
+  <button id="cookie-preferences" class="btn-outline--light txt-small" tabindex="1">
+    Settings    
+  </button>
+  <div id="cookie-preferences--menu" class="hide">
+    <p class="txt-small">Choose which cookies you want to allow and click "Save & Close" to save your preferences</p>
+    <p class="txt-bold txt-small">Allow cookies:</p>
+    <input type="checkbox" name="Strictly Necessary" id="strictly-necessary" checked>
+    <label for="strictly-necessary" class="txt-small">Strictly Necessary</label>
+    <input type="checkbox" name="Analytics" id="analytics">
+    <label for="analytics" class="txt-small">Analytics</label>
+    <input type="checkbox" name="Marketing" id="marketing">
+    <label for="analytics" class="txt-small">Marketing</label>
+  </div>
+</section>
+<button id="cookie-prefs" class="cookie-prefs flex-center" aria-label="open cookie preferences">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows_Settings_app_icon.png" alt="">
+</button>
+<div id="scripts"></div>
 {% endraw %}
-
 ```
 
 ### The CSS
@@ -45,17 +76,63 @@ The cookie banner HTML structure is pretty straight forward: a fixed banner (or 
 Pretty straight forward styles for this, just so we can see it work. Notice the utility class \`hide\`:
 
 ```
-
 {% raw %}
+body {
+  font-family: Arial, sans-serif;
+}
+.overview {
+  width: 80%;
+  height: 50vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-body \{<br>&nbsp; font-family: Arial, sans-serif;<br>\}<br>.cookies-banner \{<br>&nbsp; position: fixed;<br>&nbsp; bottom:0;<br>&nbsp; left: 0;<br>&nbsp; width: 100%;<br>&nbsp; height: auto;<br>&nbsp;<br>\}<br>.btn,<br>&nbsp; \[class\*=btn-outline\] \{<br>&nbsp; &nbsp; padding: 0.5rem;<br>&nbsp; \}<br>.btn-outline \{<br>&nbsp; color &nbsp; &nbsp; &nbsp; &nbsp; : whitesmoke;<br>&nbsp; border-color &nbsp;: inherit;<br>\}<br>.cookie-prefs \{<br>&nbsp; position: fixed;<br>&nbsp; bottom: 1.5rem;<br>&nbsp; left: 1.5rem;<br>&nbsp; background-color: $light-color;<br>&nbsp; box-shadow: 0 3px 5px rgba(103, 103, 103, 0.605);<br>&nbsp; height: 45px;<br>&nbsp; width: 45px;<br>&nbsp; border-radius: 50%;<br>&nbsp; transform: rotate(-90deg);<br>&nbsp; z-index: -1;<br>\}<br>button img \{<br>&nbsp; width: 24px;<br>\}<br>.hide \{<br>&nbsp; display: none;<br>\}
+.cookies-banner {
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width: 100%;
+  height: auto;
+ 
+}
+.btn,
+  [class*=btn-outline] {
+    padding: 0.5rem;
+  }
+.btn-outline {
+  color         : whitesmoke;
+  border-color  : inherit;
+}
+.cookie-prefs {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background-color: $light-color;
+  box-shadow: 0 3px 5px rgba(103, 103, 103, 0.605);
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+  z-index: -1;
+}
+button img {
+  width: 24px;
+}
+.hide {
+  display: none;
+}
 
-.px-lg \{<br>&nbsp; padding: 2rem;<br>\}
+.px-lg {
+  padding: 2rem;
+}
 
-.bg-dark \{<br>&nbsp; background-color: \#888;<br>\}
-
-<br>{% endraw %}
-
+.bg-dark {
+  background-color: #888;
+}
+{% endraw %}
 ```
 
 ### The JavaScript
@@ -71,65 +148,42 @@ Here's where the fun begins: we will use Vanilla JavaScript (no jQuery) to perfo
 First, we need to establish the variables:
 
 ```
-
-{% raw %}<br>&nbsp;
-
-*// Cookie banner*
-
-*// Variables & Constants*
-
+{% raw %}
+// Cookie banner
+// Variables & Constants
 const cookiePrefs = document.getElementById("cookie-preferences");
-
 const cookieBanner = document.getElementById("cookies-banner");
-
-const cookieChoices = document.getElementById("cookie-preferences–menu");
-
+const cookieChoices = document.getElementById("cookie-preferences--menu");
 const cookieConsent = document.getElementById("cookie-consent");
-
 const scripts = document.getElementById("scripts");
-
 const strictConsent = document.getElementById("strictly-necessary");
-
 const analyticsConsent = document.getElementById("analytics");
-
 const marketingConsent = document.getElementById("marketing");
-
 let savedPrefs = sessionStorage.getItem("consents");
 
-const cookies = \[
+// function to create DOM element
 
-\{
+const cookies = [
+  {
+    type: "strictly-necessary",
+    path: [],
+  },
+  {
+    type: "analytics",
+    path: [],
+  },
+  {
+    type: "marketing",
+    path: [],
+  },
+];
 
-type: "strictly-necessary",
+// Set cookies that have the same data-cookie-type than data-consent-type
+const checkboxes = cookieChoices.querySelectorAll("input");
 
-path: \[\],
-
-\},
-
-\{
-
-type: "analytics",
-
-path: \[\],
-
-\},
-
-\{
-
-type: "marketing",
-
-path: \[\],
-
-\},
-
-\];
-
-// Set cookies that have the same data-cookie-type than data-consent-type<br>const checkboxes = cookieChoices.querySelectorAll("input");
-
-// For banner preferences<br>let clicks = 0;
-
+// For banner preferences
+let clicks = 0;
 {% endraw %}
-
 ```
 
 Here we have established a few variables to be called at a later stage. The \`cookies\` variable is the array where we will define our cookies; should you have more than 3 **types** of cookies, you should update this array with a new object, and also create a **new variable** (or constant) named \`yourNewTypeConsent', where \`yourNewType\` is the type of cookie you want to set up. You'll also need to **add a new checkbox on the HTML**.
@@ -143,17 +197,54 @@ Now we will create callback functions to be executed later in the logic. Here th
 ```
 
 {% raw %}
+// **** Callback functions ****
 
-// \*\*\*\* Callback functions \*\*\*\*
+/* create element */
+const createEl = function (p, t) {
+  const el = document.createElement("script");
+  const att = document.createAttribute("data-cookie-type");
+  const src = document.createAttribute("src");
+  src.value = p;
+  att.value = t;
+  el.setAttributeNode(att);
+  el.setAttributeNode(src);
+  return scripts.appendChild(el);
+};
 
-// Create element<br><br>const createEl = function (p, t) \{<br>&nbsp; const el = document.createElement("script");<br>&nbsp; const att = document.createAttribute("data-cookie-type");<br>&nbsp; const src = document.createAttribute("src");<br>&nbsp; src.value = p;<br>&nbsp; att.value = t;<br>&nbsp; el.setAttributeNode(att);<br>&nbsp; el.setAttributeNode(src);<br>&nbsp; return scripts.appendChild(el);<br>\};
+/* Set cookies according to preferences with the cookies array */
+function setCookie(arr, type) {
+  arr.forEach(function (obj) {
+    if (obj.type === type) {
+      let paths = obj.path;
+      paths.forEach(function (path) {
+        createEl(path, type);
+      });
+    };
+  });
+};
 
-// Set Cookies<br><br>function setCookie(arr, type) \{<br>&nbsp; arr.forEach(function (obj) \{<br>&nbsp; &nbsp; if (obj.type === type) \{<br>&nbsp; &nbsp; &nbsp; let paths = obj.path;<br>&nbsp; &nbsp; &nbsp; paths.forEach(function (path) \{<br>&nbsp; &nbsp; &nbsp; &nbsp; createEl(path, type);<br>&nbsp; &nbsp; &nbsp; \});<br>&nbsp; &nbsp; \};<br>&nbsp; \});<br>\};
-
-// Check Preferences<br>function checkPrefs(checkbox) \{<br>&nbsp; if (checkbox.checked) \{<br>&nbsp; &nbsp; let type = checkbox.dataset.consentType;<br>&nbsp; &nbsp; let index = consents.indexOf(type);<br>&nbsp; &nbsp; if (index === -1) \{<br>&nbsp; &nbsp; &nbsp; consents.push(type);<br>&nbsp; &nbsp; &nbsp; sessionStorage.clear();<br>&nbsp; &nbsp; &nbsp; sessionStorage.setItem("consents", consents);<br>&nbsp; &nbsp; \}<br>&nbsp; \} else if (\!checkbox.checked) \{<br>&nbsp; &nbsp; let type = checkbox.dataset.consentType;<br>&nbsp; &nbsp; let index = consents.indexOf(type);<br>&nbsp; &nbsp; if (index \!== -1) \{<br>&nbsp; &nbsp; &nbsp; consents.splice(index, 1);<br>&nbsp; &nbsp; &nbsp; sessionStorage.clear();<br>&nbsp; &nbsp; &nbsp; sessionStorage.setItem("consents", consents);<br>&nbsp; &nbsp; \}<br>&nbsp; \}<br>\}
+/* check preferences */
+function checkPrefs(checkbox) {
+  if (checkbox.checked) {
+    let type = checkbox.dataset.consentType;
+    let index = consents.indexOf(type);
+    if (index === -1) {
+      consents.push(type);
+      sessionStorage.clear();
+      sessionStorage.setItem("consents", consents);
+    }
+  } else if (!checkbox.checked) {
+    let type = checkbox.dataset.consentType;
+    let index = consents.indexOf(type);
+    if (index !== -1) {
+      consents.splice(index, 1);
+      sessionStorage.clear();
+      sessionStorage.setItem("consents", consents);
+    }
+  }
+}
 
 {% endraw %}
-
 ```
 
 Let's go one-by-one:
