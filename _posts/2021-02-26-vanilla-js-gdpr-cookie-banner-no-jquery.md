@@ -73,7 +73,7 @@ The cookie banner HTML structure is pretty straight forward: a fixed banner (or 
 
 ### The CSS
 
-Pretty straight forward styles for this, just so we can see it work. Notice the utility class \`hide\`:
+Pretty straight forward styles for this, just so we can see it work. Notice the utility class `hide`:
 
 ```
 {% raw %}
@@ -186,9 +186,9 @@ let clicks = 0;
 {% endraw %}
 ```
 
-Here we have established a few variables to be called at a later stage. The \`cookies\` variable is the array where we will define our cookies; should you have more than 3 **types** of cookies, you should update this array with a new object, and also create a **new variable** (or constant) named \`yourNewTypeConsent', where \`yourNewType\` is the type of cookie you want to set up. You'll also need to **add a new checkbox on the HTML**.
+Here we have established a few variables to be called at a later stage. The `cookies` variable is the array where we will define our cookies; should you have more than 3 **types** of cookies, you should update this array with a new object, and also create a **new variable** (or constant) named `yourNewTypeConsent`, where `yourNewType` is the type of cookie you want to set up. You'll also need to **add a new checkbox on the HTML**.
 
-The \`path\` key presents an array where you should set your scripts \`src\` attribute value, **as a string**, and separated by comma.
+The `path` key presents an array where you should set your scripts `src` attribute value, **as a string**, and separated by comma.
 
 #### Callback Functions
 
@@ -251,11 +251,11 @@ Let's go one-by-one:
 
 1\. Create element
 
-This function will manipulate the DOM and inject a \`&lt;script&gt;\` tag inside a container (\`&lt;div id="scripts"&gt;\`) with their respective attributes passed on (\`src\` and \`data-cookie-type\`).&nbsp;
+This function will manipulate the DOM and inject a `<script>` tag inside a container (`<div id="scripts">`) with their respective attributes passed on (`src` and `data-cookie-type`).
 
 2\. Set Cookies
 
-This function will check how many iterations of the \`createEl()\` function; for example, if the cookie type "Marketing" has 3 \`paths\`, then it will create an element with the path and inject in the DOM.
+This function will check how many iterations of the `createEl()` function; for example, if the cookie type `marketing` has 3 `paths`, then it will create an element with the path and inject in the DOM.
 
 3\. Check Preferences
 
