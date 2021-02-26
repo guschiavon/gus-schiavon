@@ -32,19 +32,19 @@ Creating a GDPR-compliant vanilla JavaScript cookie banner requires a few things
 
 The cookie banner HTML structure is pretty straight forward: a fixed banner (or pop-up, whichever you prefer) with some information about cookies and a couple of choices for the user. I've opted to add a paragraph and a couple of buttons for accessibility:
 
-\`\`\`
+```
 
 {% raw %}<br>&lt;section id="cookies-banner" class="cookies-banner bg-dark px-lg"&gt;<br>&nbsp; &lt;h4&gt;We use cookies in this page&lt;/h4&gt;<br>&nbsp; &lt;p class="editable txt-small"&gt;Explain here what are cookies and all&lt;/p&gt;<br>&nbsp; &lt;button id="cookie-consent" class="btn txt-small" tabindex="1"&gt;<br>&nbsp; &nbsp; Accept All Cookies<br>&nbsp; &lt;/button&gt;<br>&nbsp; &lt;button id="cookie-preferences" class="btn-outline–light txt-small" tabindex="1"&gt;<br>&nbsp; &nbsp; Settings &nbsp; &nbsp;<br>&nbsp; &lt;/button&gt;<br>&nbsp; &lt;div id="cookie-preferences–menu" class="hide"&gt;<br>&nbsp; &nbsp; &lt;p class="txt-small"&gt;Choose which cookies you want to allow and click "Save & Close" to save your preferences&lt;/p&gt;<br>&nbsp; &nbsp; &lt;p class="txt-bold txt-small"&gt;Allow cookies:&lt;/p&gt;<br>&nbsp; &nbsp; &lt;input type="checkbox" name="Strictly Necessary" id="strictly-necessary" checked&gt;<br>&nbsp; &nbsp; &lt;label for="strictly-necessary" class="txt-small"&gt;Strictly Necessary&lt;/label&gt;<br>&nbsp; &nbsp; &lt;input type="checkbox" name="Analytics" id="analytics"&gt;<br>&nbsp; &nbsp; &lt;label for="analytics" class="txt-small"&gt;Analytics&lt;/label&gt;<br>&nbsp; &nbsp; &lt;input type="checkbox" name="Marketing" id="marketing"&gt;<br>&nbsp; &nbsp; &lt;label for="analytics" class="txt-small"&gt;Marketing&lt;/label&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;/section&gt;<br>&lt;button id="cookie-prefs" class="cookie-prefs flex-center" aria-label="open cookie preferences"&gt;<br>&nbsp; &lt;img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Windows\_Settings\_app\_icon.png" alt=""&gt;<br>&lt;/button&gt;<br>&lt;div id="scripts"&gt;&lt;/div&gt;
 
 {% endraw %}
 
-\`\`\`
+```
 
 ### The CSS
 
 Pretty straight forward styles for this, just so we can see it work. Notice the utility class \`hide\`:
 
-\`\`\`
+```
 
 {% raw %}
 
@@ -56,7 +56,7 @@ body \{<br>&nbsp; font-family: Arial, sans-serif;<br>\}<br>.cookies-banner \{<br
 
 <br>{% endraw %}
 
-\`\`\`
+```
 
 ### The JavaScript
 
@@ -70,7 +70,7 @@ Here's where the fun begins: we will use Vanilla JavaScript (no jQuery) to perfo
 
 First, we need to establish the variables:
 
-\`\`\`
+```
 
 {% raw %}<br>&nbsp;
 
@@ -130,7 +130,7 @@ path: \[\],
 
 {% endraw %}
 
-\`\`\`
+```
 
 Here we have established a few variables to be called at a later stage. The \`cookies\` variable is the array where we will define our cookies; should you have more than 3 **types** of cookies, you should update this array with a new object, and also create a **new variable** (or constant) named \`yourNewTypeConsent', where \`yourNewType\` is the type of cookie you want to set up. You'll also need to **add a new checkbox on the HTML**.
 
@@ -140,7 +140,7 @@ The \`path\` key presents an array where you should set your scripts \`src\` att
 
 Now we will create callback functions to be executed later in the logic. Here they are:
 
-\`\`\`
+```
 
 {% raw %}
 
@@ -152,9 +152,9 @@ Now we will create callback functions to be executed later in the logic. Here th
 
 // Check Preferences<br>function checkPrefs(checkbox) \{<br>&nbsp; if (checkbox.checked) \{<br>&nbsp; &nbsp; let type = checkbox.dataset.consentType;<br>&nbsp; &nbsp; let index = consents.indexOf(type);<br>&nbsp; &nbsp; if (index === -1) \{<br>&nbsp; &nbsp; &nbsp; consents.push(type);<br>&nbsp; &nbsp; &nbsp; sessionStorage.clear();<br>&nbsp; &nbsp; &nbsp; sessionStorage.setItem("consents", consents);<br>&nbsp; &nbsp; \}<br>&nbsp; \} else if (\!checkbox.checked) \{<br>&nbsp; &nbsp; let type = checkbox.dataset.consentType;<br>&nbsp; &nbsp; let index = consents.indexOf(type);<br>&nbsp; &nbsp; if (index \!== -1) \{<br>&nbsp; &nbsp; &nbsp; consents.splice(index, 1);<br>&nbsp; &nbsp; &nbsp; sessionStorage.clear();<br>&nbsp; &nbsp; &nbsp; sessionStorage.setItem("consents", consents);<br>&nbsp; &nbsp; \}<br>&nbsp; \}<br>\}
 
-\{% endraw % \}
+{% endraw %}
 
-\`\`\`
+```
 
 Let's go one-by-one:
 
