@@ -34,7 +34,9 @@ layout: default
     </div>
   </div>
   {% endfor %}
+  {% unless page.testimonial_text_html == nill %}
   <blockquote class="my-2"><p>{{page.testimonial_text_html}}</p><cite>{{page.testimonial_author}}</cite></blockquote>
+  {%endunless%}
   <section id="cta" class="cta py-lg px-md">
     <h2 class="txt-highlight">Liked {{page.title}}'s site?</h2>
     <h4 class="editable">Then <strong class="txt-highlight">let's develop something similar</strong> to suit your business or bran needs!</h4>

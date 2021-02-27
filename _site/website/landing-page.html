@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Gus - Frontend Web Development</title>
+  <title>Landing Page</title>
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="About Gus - Frontend Web Development">
-<meta property="og:url" content="https://itsgus.dev//about.html">
-<meta property="og:image" content="https://itsgus.dev//assets/images/cover.jpg" />
-<meta property="og:image:url" content="https://itsgus.dev//assets/images/cover.jpg" />
-<meta property="og:image:secure_url" content="https://itsgus.dev//assets/images/cover.jpg" />
+<meta property="og:title" content="Landing Page">
+<meta property="og:url" content="https://itsgus.dev//website/landing-page">
+<meta property="og:image" content="https://itsgus.dev//assets/images/landing-preview.png " />
+<meta property="og:image:url" content="/assets/images/landing-preview.png " />
+<meta property="og:image:secure_url" content="https://itsgus.dev//assets/images/landing-preview.png " />
 <meta property="og:image:type" content="image/jpg" />
 <meta property="og:image:width" content="600" />
 <meta property="og:image:alt" content="" />
@@ -19,7 +19,7 @@
 <meta property="fb:app_id" content="">
 
 <!-- <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="About Gus - Frontend Web Development">
+<meta name="twitter:title" content="Landing Page">
 <meta name="twitter:description" content="">
 <meta name="twitter:site" content="" />
 <meta name="twitter:creator" content="">
@@ -45,7 +45,7 @@
 <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png"> -->
 <!-- <meta name="theme-color" content="#ffffff"> -->
 
-<link rel="canonical" href="https://itsgus.dev//about.html">
+<link rel="canonical" href="https://itsgus.dev//website/landing-page">
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css"> <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400&family=Glegoo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/main.css">
@@ -98,28 +98,78 @@
       </div>
     </header>
       <main class="col-9_sm-12">
-  <section class="py-md">
-
-    <h1 class="left">About Gus</h1>
-    <h4 class="left">The guy that made this site</h4>
-    <hr id="divider" class="divider-lg mb-2">
-    <div class="profile-image">
-      <img class="responsive-image" src="assets/images/gus-schiavon-001.jpg" alt="Gus is a frontend web developer based in Santa Catarina, Brazil. Gus é um desenvolvedor frontend em Santa Catarina, Brasil.">
+  <div id="title-section">
+    <h1>Landing Page</h1>
+    <h4>Jekyll/GSAP</h4>
+  </div>
+  <hr id="divider" class="divider-lg mb-2">
+  <div class="portfolio-hero-image mb-2">
+    <img src="/assets/images/landing-preview.png" alt="" class="responsive-image">
+  </div>
+  <div class="py-lg">
+    <h3>Live site: <a href="https://landing-page.itsgus.dev" rel="noopener noreferrer">landing-page.itsgus.dev</a></h3>
+  </div>
+  <h3>Briefing:</h3>
+  <p>
+</p>
+  
+  
+  <div class="grid-noGutter-spaceBetween portfolio-highlight">
+    <div class="col-5_md-6_sm-12-middle portfolio-thumb">
+      <img src="/assets/images/greensock.png" alt="Landing Page portfolio website by Gus Schiavon" class="portfolio-thumb-image responsive-image">
     </div>
-    <p class="editable">
-      <strong>Trust me.</strong>
-    </p>
-    <p class="editable">
-      I've been a pizzaiolo. A hostel manager. A canyoning photographer. I've been from Java to Iran, from Ireland to New Zealand, from an 8-day canyon traverse to 48 meters below the sea.
-    </p>
-    <p class="editable">
-      I do things differently, I live life to the fullest, I make it my way. And now it's time for me to support your goals, to <strong>develop/boost/renew your business</strong>, so you too can <strong>make it your way</strong>.
-    </p>
-    <p class="editable">
-      Sounds like a plan? I'm here for <strong>you</strong>. <a href="/contact">Let's do it.</a>
-
-    </p>
-    <p>Want to learn coding? Then check out this online bootcamp by The Institute Of Code: <a href="https://www.instituteofcode.com/courses/web-dev-digital/?ref=gustavoschiavon" target="_BLANK" rel="nofollow noopener">Web Development Digital Bootcamp</a>. That's how I learned and changed my career!</p>
+    <div class="col-5_md-6_sm-12-middle ">
+      <div class="portfolio-highlight-content">
+        <h4 class="portfolio-highlight-title mb-1">
+          Staggered animations
+          <hr id="portfolio-highlight-title-underline" class="portfolio-highlight-title-underline">
+        </h4>
+        <div class="txt-small">
+          <p>Staggering the animations makes the site more dynamic and fluid, ensuring the content shows up at its time. This makes for a more pleasant UX.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="grid-noGutter-spaceBetween-reverse portfolio-highlight">
+    <div class="col-5_md-6_sm-12-middle portfolio-thumb">
+      <img src="/assets/images/performance.png" alt="Landing Page portfolio website by Gus Schiavon" class="portfolio-thumb-image responsive-image">
+    </div>
+    <div class="col-5_md-6_sm-12-middle right">
+      <div class="portfolio-highlight-content">
+        <h4 class="portfolio-highlight-title mb-1">
+          Lightning fast
+          <hr id="portfolio-highlight-title-underline" class="portfolio-highlight-title-underline">
+        </h4>
+        <div class="txt-small">
+          <p>This landing page has excellent performace according to Google Lighthouse tests: it scored 96/100 on performance, loading in a mere 0.7s! That's FAST!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="grid-noGutter-spaceBetween portfolio-highlight">
+    <div class="col-5_md-6_sm-12-middle portfolio-thumb">
+      <img src="/assets/images/cookie.jpg" alt="Landing Page portfolio website by Gus Schiavon" class="portfolio-thumb-image responsive-image">
+    </div>
+    <div class="col-5_md-6_sm-12-middle ">
+      <div class="portfolio-highlight-content">
+        <h4 class="portfolio-highlight-title mb-1">
+          GDPR-compliant
+          <hr id="portfolio-highlight-title-underline" class="portfolio-highlight-title-underline">
+        </h4>
+        <div class="txt-small">
+          <p>The site uses vanilla JavaScript to control the user's cookie preferences; this type of feature is normally implemented as an add-on but this page has a build-in cookie script that complies with the GDPR-EU regulations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <section id="cta" class="cta py-lg px-md">
+    <h2 class="txt-highlight">Liked Landing Page's site?</h2>
+    <h4 class="editable">Then <strong class="txt-highlight">let's develop something similar</strong> to suit your business or bran needs!</h4>
+    <h4 class="editable">It's <strong class="txt-highlight">easier than you'd think</strong>. It's gus.dev</h4>
   </section>
 </main>
     <footer id="footer" class="footer col-12">
