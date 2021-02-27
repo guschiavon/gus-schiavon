@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Vanilla JS GDPR Cookie Banner [No jQuery!]'
-preview_image:
+preview_image: /assets/images/js-cookie-banner.jpg
 subtitle: A Vanilla JS solution for GDPR compliance
 short_description: >-
   A free GDPR banner & cookie script using Vanilla JavaScript for quick
