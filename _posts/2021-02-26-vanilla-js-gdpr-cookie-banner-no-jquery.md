@@ -18,7 +18,7 @@ Creating a Vanilla JavaScript (no jQuery), GDPR-compliant cookie banner was a gr
 
 ### TL;DR
 
-The complete GDPR cookie banner & script can be found on [this pen](https://codepen.io/gschiavon/pen/wvoWZwB){: target="_blank" rel="noopener noreferrer"}. Adaptation might be needed to suit your design and data protection.
+The complete GDPR cookie banner & script can be found on [this pen](https://codepen.io/gschiavon/pen/wvoWZwB){: target="_blank" rel="noopener noreferrer"}. Adaptation might be needed to suit your design and data protection. The preferences are session-unique, meaning the cookie preferences are stored in the `sessionStorage` of the client and erased once the tab is closed.
 
 ### Overview
 
@@ -35,15 +35,6 @@ The cookie banner HTML structure is pretty straight forward: a fixed banner (or 
 ```
 
 {% raw %}
-<section class="overview">
-  <h1>Set Session Cookie Preferences</h1>
-  <p>A GDPR-EU compliant, Vanilla JS solution to add cookies according to user preferences.</p>
-  <ol>
-   <li>Cookie preferences are stored in the sessionStorage of the client; you can access this information under the Application tab of the Dev Tools.</li>
-  <li>Open Dev Tools and find the '#scripts' tag to see the script in action.</li>
-    <li>Style it to your liking...</li>
-  </ol>
-</section>
 <section id="cookies-banner" class="cookies-banner bg-dark px-lg">
   <h4>We use cookies in this page</h4>
   <p class="editable txt-small">Explain here what are cookies and all</p>
@@ -141,7 +132,9 @@ Here's where the fun begins: we will use Vanilla JavaScript (no jQuery) to perfo
 
 * Set cookies according to user preferences
 * Allow users to review their cookie preferences and update the scripts accordingly at any point
-* Remember user preferences during the session to prevent annoying cookie banner pop-ups (warning: NOT 100% GDPR COMPLIANT\!)
+* Remember user preferences during the session to prevent annoying cookie banner pop-ups (warning: NOT 100% GDPR-EU COMPLIANT\!)
+
+The preferences are session-unique, meaning the cookie preferences are stored in the `sessionStorage` of the client and erased once the tab is closed. I've opted for sessionStorage as it is merely a client-side function.
 
 #### Variables
 
@@ -152,6 +145,7 @@ First, we need to establish the variables:
 // Cookie banner
 // Variables & Constants
 const cookiePrefs = document.getElementById("cookie-preferences");
+const toggleCookiePrefs = document.getElementById("cookie-prefs");
 const cookieBanner = document.getElementById("cookies-banner");
 const cookieChoices = document.getElementById("cookie-preferences--menu");
 const cookieConsent = document.getElementById("cookie-consent");
@@ -262,3 +256,94 @@ This function will check how many iterations of the `createEl()` function; for e
 This callback checks the user preferences and updates the sessionStorage according to the user's choices. It will:
 
 \- check which of the checkboxes have been ticked<br>\- clear the session storage before setting the preferences<br>\- set the preferences on sessionStorage
+
+### Adding the logic
+
+Now let's add the JavaScript logic behind setting the cookies:
+
+```
+{%raw%}
+// displays the cookie banner on click
+toggleCookiesPrefs.addEventListener('click', function () {
+  cookieBanner.classList.remove('hide')
+})
+
+// We create an empty array to store the preferences, as strings 
+let consents = []
+
+// Creates an array from the scripts that are currently in the DOM
+let activeScripts = scripts.children;
+
+// Preferences
+
+// Remember session preferences
+if (savedPrefs) {  
+  cookieBanner.classList.add('hide')
+  let preferences = sessionStorage.getItem("consents").split(",");
+  preferences.forEach(function (type) {
+    setCookie(cookies, type);
+  });
+} else if (!savedPrefs) {  
+  cookieBanner.classList.remove('hide')
+}
+
+// Logic
+cookiePrefs.addEventListener("click", function () {
+  // increases the clicks by 1 when clicked
+  clicks++;
+  // checks if the clicks are odd
+  isOdd = (clicks) => {clicks % 2 == 1}
+  // If clicks are odd, then update button text content and display the cookie choices
+  if (isOdd(clicks)) {
+    this.textContent = "Save and Close";
+    cookieChoices.classList.remove("hide");
+    // When clicking on the "Save & Close" button, clear the container innerHTML, check which checkboxes are checked and then set the cookies inside the container, reset the click count
+    this.addEventListener("click", function () {
+      scripts.innerHTML = ''
+      // Checks the consent status and updates the sessionStorage
+      checkboxes.forEach(function (checkbox) {
+        checkPrefs(checkbox)       
+      });
+      // checks which cookies are being allowed and then sets the script inside the 'id="scripts"' tag
+      let preferences = sessionStorage.getItem('consents').split(',')
+      preferences.forEach(function(type){
+        setCookie(cookies, type)
+      })
+      // zeros the clicks
+      let clicks = 0
+    });
+  } else if ((clicks === 0)) {
+    this.textContent = "Configure";
+  } else {
+    this.textContent = "Configure";
+    cookieBanner.classList.add("hide");
+    cookieChoices.classList.add("hide");
+  }
+});
+
+// Consent to all cookies
+cookieConsent.addEventListener("click", function () {
+  let consents = []
+  scripts.innerHTML = "";
+  cookies.forEach(function (cookie) {
+    const cPaths = cookie.path;
+    const cType = cookie.type;
+    for (let i = 0; i < cPaths.length; i++) {
+      createEl(cPaths[i], cType);
+    }
+    consents.push(cType);
+  });
+  sessionStorage.setItem('consents', consents);
+  cookieBanner.classList.add('hide');
+});
+
+{%endraw%}
+```
+
+Note that we clear the consents array and the `innerHTML` of the `<scripts id="scripts">` tag whenever new preferences are passed; this way we ensure only the allowed cookies are set.
+
+### Fully GDPR-compliant
+
+If you want to make it fully GDPR compliant, then remove the conditional logic which checks for `savedPrefs`; this way the cookie banner will pop up in every single page despite the user's choices.
+
+What do you think? Would you do it any differently? How can I improve this? You can check [this pen](https://codepen.io/gschiavon/pen/wvoWZwB){: target="_blank" rel="noopener noreferrer"} for the full working example.
