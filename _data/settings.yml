@@ -1,6 +1,6 @@
 general_settings:
   site_title: Frontend Web Development
-  site_url: 'https://itsgus.dev'
+  site_url: 'https://itsgus.dev/'
   preview_image: /assets/images/cover.jpg
   social:
     - icon: "LinkedIn"
