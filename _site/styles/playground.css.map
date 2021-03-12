@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "playground.css",
+	"sources": [
+		"playground.scss",
+		"_sass/_resets.scss"
+	],
+	"sourcesContent": [
+		"@import\n\"_resets\";\n\n$font-family: \"Bitter\", serif;;\n\na,\nspan,\np,\nli,\nh1,\nh2,\nh3,\nh4 {\n  font-family: $font-family;\n}\n\n.container {  \n  overflow: hidden;  \n  width: 400px;\n  height: 640px;  \n  margin: auto;\n  text-align: center;\n}\n\n.frames {\n  will-change: transform;\n}\n#section1 {\n  width: 100vw;\n  height: 100px;\n  position:fixed;\n  top:0;\n  background-color:whitesmoke;\n  padding: 0 2rem;\n}\n\n#section2,\n#section4,\n#footer {\n  height: 600px;\n  width: 100vw;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n#section2 {\n  background-color: goldenrod;\n}\n#section3 {\n  padding: 5rem;\n}\n#section3 h2 {\n  opacity: 0;\n}",
+		"* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\na {\n  text-decoration: none;\n  color: inherit;\n  transition: 0.2s all;\n}\n\nimg {\n  max-width: 100%;\n}"
+	],
+	"names": [],
+	"mappings": "ACAA,AAAA,CAAC,CAAC,EACA,UAAU,EAAE,UAAU,EACtB,MAAM,EAAE,CAAC,EACT,OAAO,EAAE,CAAC,GACX;;AAED,AAAA,CAAC,CAAC,EACA,eAAe,EAAE,IAAI,EACrB,KAAK,EAAE,OAAO,EACd,UAAU,EAAE,QAAQ,GACrB;;AAED,AAAA,GAAG,CAAC,EACF,SAAS,EAAE,IAAI,GAChB;;ADTD,AAAA,CAAC,EACD,IAAI,EACJ,CAAC,EACD,EAAE,EACF,EAAE,EACF,EAAE,EACF,EAAE,EACF,EAAE,CAAC,EACD,WAAW,EAVC,QAAQ,EAAE,KAAK,GAW5B;;AAED,AAAA,UAAU,CAAC,EACT,QAAQ,EAAE,MAAM,EAChB,KAAK,EAAE,KAAK,EACZ,MAAM,EAAE,KAAK,EACb,MAAM,EAAE,IAAI,EACZ,UAAU,EAAE,MAAM,GACnB;;AAED,AAAA,OAAO,CAAC,EACN,WAAW,EAAE,SAAS,GACvB;;AACD,AAAA,SAAS,CAAC,EACR,KAAK,EAAE,KAAK,EACZ,MAAM,EAAE,KAAK,EACb,QAAQ,EAAC,KAAK,EACd,GAAG,EAAC,CAAC,EACL,gBAAgB,EAAC,UAAU,EAC3B,OAAO,EAAE,MAAM,GAChB;;AAED,AAAA,SAAS,EACT,SAAS,EACT,OAAO,CAAC,EACN,MAAM,EAAE,KAAK,EACb,KAAK,EAAE,KAAK,EACZ,OAAO,EAAE,IAAI,EACb,cAAc,EAAE,MAAM,EACtB,WAAW,EAAE,MAAM,EACnB,eAAe,EAAE,MAAM,GACxB;;AACD,AAAA,SAAS,CAAC,EACR,gBAAgB,EAAE,SAAS,GAC5B;;AACD,AAAA,SAAS,CAAC,EACR,OAAO,EAAE,IAAI,GACd;;AACD,AAAA,SAAS,CAAC,EAAE,CAAC,EACX,OAAO,EAAE,CAAC,GACX"
+}

@@ -6,8 +6,8 @@ title:
 short_description: 
 client_url:
 stack:
-testimonial_text_html:
-testimonial_author:
+testimonial_text_html: >-  
+testimonial_author: 
 preview_image: 
 hero_image:
 portfolio_highlights:

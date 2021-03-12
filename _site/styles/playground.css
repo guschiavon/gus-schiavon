@@ -1,0 +1,23 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+a { text-decoration: none; color: inherit; transition: 0.2s all; }
+
+img { max-width: 100%; }
+
+a, span, p, li, h1, h2, h3, h4 { font-family: "Bitter", serif; }
+
+.container { overflow: hidden; width: 400px; height: 640px; margin: auto; text-align: center; }
+
+.frames { will-change: transform; }
+
+#section1 { width: 100vw; height: 100px; position: fixed; top: 0; background-color: whitesmoke; padding: 0 2rem; }
+
+#section2, #section4, #footer { height: 600px; width: 100vw; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+#section2 { background-color: goldenrod; }
+
+#section3 { padding: 5rem; }
+
+#section3 h2 { opacity: 0; }
+
+/*# sourceMappingURL=playground.css.map */

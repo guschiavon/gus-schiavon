@@ -168,7 +168,7 @@ main a { color: #1fc71f; }
 
 a:hover, a:focus { color: #1fc71f; }
 
-a:hover { transition: 0.2s all; }
+a:hover { transition: 0.2s all; cursor: pointer; }
 
 a:focus { outline: none; text-decoration: underline; font-weight: bolder; }
 

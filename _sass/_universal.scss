@@ -9,10 +9,6 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  cursor: pointer;
-}
-
 body,
 div,
 p,
@@ -143,6 +139,7 @@ a:focus {
 }
 a:hover {
   transition: 0.2s all;
+  cursor: pointer;
 }
 a:focus {
   outline: none;

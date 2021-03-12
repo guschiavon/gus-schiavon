@@ -8,7 +8,8 @@ short_description: >-
   from USA
 client_url: 20nelabs.com
 stack: Squarespace/GSAP
-testimonial_text_html:
+testimonial_text_html: >-
+  The job was to work on revamping and animating our site to make it look more professional and creative. Gustavo worked within the hours, did an amazing job at bringing the site to life and did well above-and-beyond what I expected. 
 testimonial_author: Chenille Chang
 preview_image: /assets/images/cover.jpg
 hero_image: /assets/images/20nelabs-hero.png

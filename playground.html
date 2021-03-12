@@ -1,0 +1,104 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css">
+   {{site.data.settings.configuration.head_code_block}}
+   <link rel="stylesheet" href="/styles/playground.css">
+</head>
+<body>
+  
+  {%include structure/scripts.html %}
+  <style>
+
+
+</style>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+
+  let openTin = document.getElementById('container')
+
+let endSection = document.getElementById('section4')
+
+let spriteSheet = {
+  width: 400,
+  height: 640,
+  total: 60,
+  cols: 1,
+  rows: 60,
+  duration: 5
+};
+
+let tl = gsap.timeline({
+  scrollTrigger: {
+    scrub: 0.25,
+  }
+});
+
+let section = document.getElementById('section3')
+
+let pinAnimationTl = gsap.timeline({
+  scrollTrigger: {
+    markers: true,
+    trigger: section,
+    start: "top top+=100",
+    endTrigger: endSection,    
+    // end: "top 70%",
+    pin: true,    
+    duration: 5,
+    scrub: true    
+  }
+})
+pinAnimationTl.to("#section3 h2", {
+  opacity: 1,
+  stagger: 1.5,
+  duration: 5
+})
+
+
+for (let i = 0; i < spriteSheet.total; i++) {  
+  pinAnimationTl.set("#frames", {
+    x: (i % spriteSheet.cols) * -spriteSheet.width,
+    y: Math.floor(i / spriteSheet.cols) * -spriteSheet.height
+  },
+    i / (spriteSheet.total - 1) * spriteSheet.duration
+    );
+  }
+  })
+
+
+
+</script>
+<section id="section1">
+  <h3>Nav Bar</h3>
+</section>
+<section id="section2" class="center">
+  <h1>Some content here</h1>
+</section>
+<section id="section3" class="grid-noGutter" style="position: relative;">
+  <div class="col-6">
+    <h2>1. BREAK SEAL ON BAND.</h2>
+    <h2>2. OPEN THE LID AND PLACE THE POUCH UNDER THE TOP LIP.</h2>
+    <h2>3. ENJOY!</h2>
+  </div>
+  <div class="col-6 container">
+    <img id="frames" class="frames" src="/assets/images/spritesheet-60fps-400w.png">
+  </div>
+  
+</section>
+<section id="section4" style="background-color: yellow;">
+  <h2>A CTA section</h2>
+</section>
+<footer id="footer" style="background-color: gray;">
+  <h2>Footer</h2>
+</footer>
+</body>
+</html>
+
+
